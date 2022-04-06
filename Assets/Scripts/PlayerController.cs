@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
     private static readonly int InputXHash = Animator.StringToHash("inputX");
     private static readonly int InputYHash = Animator.StringToHash("inputY");
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
+    private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
+    private static readonly int lastXHash = Animator.StringToHash("lastX");
+    private static readonly int lastYHash = Animator.StringToHash("lastY");
+
+    private static readonly string IdleTreeAnimation = "Idle Tree";
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -69,17 +74,17 @@ public class PlayerController : MonoBehaviour
     {
         if (_movement.sqrMagnitude > 0.01f)
         {
-            _animator.SetBool("isMoving", true);
+            _animator.SetBool(IsMovingHash, true);
            
             lastX = _movement.x;
             lastY = _movement.y;
 
-            _animator.SetFloat("lastX", lastX);
-            _animator.SetFloat("lastY", lastY);
+            _animator.SetFloat(lastXHash, lastX);
+            _animator.SetFloat(lastYHash, lastY);
         }
         else
         {
-            _animator.SetBool("isMoving", false);
+            _animator.SetBool(IsMovingHash, false);
             _rigidbody.velocity = Vector2.zero;
         }
         _animator.SetFloat(InputXHash, _movement.x);
@@ -87,18 +92,15 @@ public class PlayerController : MonoBehaviour
     }
     void attack()
     {
-
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        
-
         if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill)
         {
             bIsAttaking = true;
             nextSkill = Time.time + cooldown;
             //_animator.SetBool("Attacking", bIsAttaking);
-            _animator.SetTrigger("Attacking");
+            _animator.SetTrigger(InputAttackHash);
         }
-        else if(animStateInfo.IsName("Idle Tree") && bIsAttaking)
+        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
         {
             bIsAttaking = false;
             // Todo: Spawn fire ball
