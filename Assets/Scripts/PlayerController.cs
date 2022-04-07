@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Velocidade do personagem
     public float speed = 10.0f;
-    public int pickable = 0;
 
+    //Variaveis para definir um intervalo de ataque
     public float cooldown = 1.5f;
     public float nextSkill;
 
@@ -16,19 +17,24 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 _movement = Vector2.zero;
 
+    //Variaveis para guardar a ultima posição do personagem
     public float lastX = 0;
     public float lastY = 0;
-
+    
+    //Variavel para guardar a informação de ataque do personagem
     private bool bIsAttaking = false;
 
+    //Variaveis para leitura mais rápida
     private static readonly int InputXHash = Animator.StringToHash("inputX");
     private static readonly int InputYHash = Animator.StringToHash("inputY");
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int lastXHash = Animator.StringToHash("lastX");
     private static readonly int lastYHash = Animator.StringToHash("lastY");
-
     private static readonly string IdleTreeAnimation = "Idle Tree";
+
+    public Transform firePosition;
+    public GameObject projectile;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -36,12 +42,6 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -57,10 +57,12 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = _velocity;
         
     }
+    //Método para captar o input e validar o movimento do personagem 
     void move()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
+                            //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
         if (!bIsAttaking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
             _movement = Vector2.zero;
         }
     }
+    //Método para ativar a as arovres de animação
     void animate()
     {
         if (_movement.sqrMagnitude > 0.01f)
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(InputXHash, _movement.x);
         _animator.SetFloat(InputYHash, _movement.y);
     }
+    //Método para verificar quando o jogador atacar
     void attack()
     {
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
@@ -103,8 +107,15 @@ public class PlayerController : MonoBehaviour
         else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
         {
             bIsAttaking = false;
+            fireBall();
             // Todo: Spawn fire ball
             //_animator.SetBool("Attacking", bIsAttaking);
         }
+    }
+    //Método para spawnar uma bola de fogo
+    void fireBall()
+    {
+        Debug.Log("Atacando");
+        Instantiate(projectile, firePosition.position, firePosition.rotation);
     }
 }
