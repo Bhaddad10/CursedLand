@@ -101,15 +101,12 @@ public class PlayerController : MonoBehaviour
         {
             bIsAttaking = true;
             nextSkill = Time.time + cooldown;
-            //_animator.SetBool("Attacking", bIsAttaking);
             _animator.SetTrigger(InputAttackHash);
         }
         else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
         {
             bIsAttaking = false;
             fireBall();
-            // Todo: Spawn fire ball
-            //_animator.SetBool("Attacking", bIsAttaking);
         }
     }
     //Método para spawnar uma bola de fogo
