@@ -114,11 +114,13 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 direction = new Vector2(lastX, lastY).normalized;
         Vector3 distance = new Vector3(lastX, lastY * 1.5f, 0);
- 
-        GameObject magicProjectile = Instantiate(projectile, firePosition.position + distance, firePosition.rotation);
+
+        GameObject magicProjectile = Instantiate(projectile, firePosition.position + distance, Quaternion.identity);
         
         magicProjectile.GetComponent<Rigidbody2D>().velocity = direction * magicProjectile.GetComponent<Projectile>().speed;
+        magicProjectile.transform.Rotate(0f, 0f, Mathf.Atan2(lastY, lastX) * Mathf.Rad2Deg);
 
-        //_rigidbody.velocity = transform.right * speed;
+        //Lógica de rotação do objeto:
+        //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
     }
 }
