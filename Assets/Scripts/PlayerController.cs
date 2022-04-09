@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform firePosition;
     public GameObject projectile;
-
+    
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -112,7 +112,13 @@ public class PlayerController : MonoBehaviour
     //Método para spawnar uma bola de fogo
     void fireBall()
     {
-        Debug.Log("Atacando");
-        Instantiate(projectile, firePosition.position, firePosition.rotation);
+        Vector2 direction = new Vector2(lastX, lastY).normalized;
+        Vector3 distance = new Vector3(lastX, lastY * 1.5f, 0);
+ 
+        GameObject magicProjectile = Instantiate(projectile, firePosition.position + distance, firePosition.rotation);
+        
+        magicProjectile.GetComponent<Rigidbody2D>().velocity = direction * magicProjectile.GetComponent<Projectile>().speed;
+
+        //_rigidbody.velocity = transform.right * speed;
     }
 }
