@@ -621,7 +621,6 @@ MonoBehaviour:
     sentences:
     - Hello! Welcome to the village.
     - You'll experience a lot of adventures here..
-  dialogManager: {fileID: 0}
 --- !u!1 &7228482694186217682
 GameObject:
   m_ObjectHideFlags: 0
