@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 8f;
-    public GameObject inpactEffect;
+    public GameObject inpactEffectPrefab;
 
     private Rigidbody2D _rigidbody;
 
@@ -13,12 +13,13 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        _rigidbody.velocity = transform.right * speed;
+        //_rigidbody.velocity = transform.right * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(inpactEffect, transform.position, Quaternion.identity);
+        GameObject effect = Instantiate(inpactEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
         //Todo: causa dano ao inimigo
         Destroy(gameObject);
     }
