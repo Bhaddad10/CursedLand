@@ -198,7 +198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &727790694
 GameObject:
@@ -243,7 +243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &809933309 stripped
 MonoBehaviour:
@@ -350,6 +350,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 727790695}
+    - target: {fileID: 1489338251, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisplayNextSentence
+      objectReference: {fileID: 0}
     - target: {fileID: 7228482693470200195, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -360,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7228482693470200195, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7228482693470200195, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
       propertyPath: m_AnchorMax.x
@@ -441,6 +445,6 @@ PrefabInstance:
     - target: {fileID: 7228482694166157981, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
       propertyPath: dialogManager
       value: 
-      objectReference: {fileID: 727790695}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}

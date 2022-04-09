@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogManager : MonoBehaviour
+public class DialogManager : IPersistentSingleton<DialogManager>
 {
     public Text nameText;
     public Text dialogText;

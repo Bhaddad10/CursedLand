@@ -5,12 +5,21 @@ using UnityEngine;
 public class DialogTrigger : MonoBehaviour
 {
     public Dialog dialog;
-    public DialogManager dialogManager;
+    private DialogManager dialogManager;
+
+    void Awake()
+    {
+        dialogManager = DialogManager.Instance;
+        if (!dialogManager)
+        {
+            Debug.LogWarning("LogManager Instance not found.");
+        }
+    }
 
     public void TriggerDialog()
     {
         Debug.Log("calling dialog manager");
         // dialogManager.StartDialog(dialog);
-        FindObjectOfType<DialogManager>().StartDialog(dialog);
+        dialogManager.StartDialog(dialog);
     }
 }
