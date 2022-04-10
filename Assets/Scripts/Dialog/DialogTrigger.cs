@@ -7,7 +7,7 @@ public class DialogTrigger : MonoBehaviour
     public Dialog dialog;
     private DialogManager dialogManager;
 
-    void Awake()
+    void Start()
     {
         dialogManager = DialogManager.Instance;
         if (!dialogManager)
