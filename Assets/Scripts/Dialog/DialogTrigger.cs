@@ -10,16 +10,10 @@ public class DialogTrigger : MonoBehaviour
     void Start()
     {
         dialogManager = DialogManager.Instance;
-        if (!dialogManager)
-        {
-            Debug.LogWarning("LogManager Instance not found.");
-        }
     }
 
     public void TriggerDialog()
     {
-        Debug.Log("calling dialog manager");
-        // dialogManager.StartDialog(dialog);
         dialogManager.StartDialog(dialog);
     }
 }

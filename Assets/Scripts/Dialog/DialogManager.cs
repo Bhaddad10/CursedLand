@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DialogManager : IPersistentSingleton<DialogManager>
 {
+    public GameObject dialogBox;
     public Text nameText;
     public Text dialogText;
 
@@ -14,10 +15,12 @@ public class DialogManager : IPersistentSingleton<DialogManager>
     void Start()
     {
         sentences = new Queue<string>();
+        dialogBox.SetActive(false);
     }
 
     public void StartDialog(Dialog dialog)
     {
+        dialogBox.SetActive(true);
         nameText.text = dialog.name;
         sentences.Clear();
         foreach (string sentence in dialog.sentences)
@@ -41,6 +44,7 @@ public class DialogManager : IPersistentSingleton<DialogManager>
 
     void EndDialog()
     {
+        dialogBox.SetActive(false);
         Debug.Log("End of conversation.");
     }
 }

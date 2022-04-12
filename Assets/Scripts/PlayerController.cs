@@ -35,7 +35,9 @@ public class PlayerController : MonoBehaviour
 
     public Transform firePosition;
     public GameObject projectile;
-    
+
+    private Collider2D CloseNpc;
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         move();
         attack();
         animate();
+        talkToNpc();
     }
 
     // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
@@ -122,5 +125,40 @@ public class PlayerController : MonoBehaviour
 
         //Lógica de rotação do objeto:
         //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "NPC")
+        {
+            Debug.Log("Close to NPC");
+            CloseNpc = other;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "NPC")
+        {
+            Debug.Log("Away from NPC");
+            CloseNpc = null;
+        }
+    }
+
+    void talkToNpc()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("Pressed X.");
+            if (CloseNpc != null)
+            {
+                DialogTrigger dialogTrigger = CloseNpc.gameObject.GetComponent<DialogTrigger>();
+                dialogTrigger.TriggerDialog();
+            }
+            else
+            {
+                Debug.Log("Could NOT talk to npc.");
+            }
+        }
     }
 }
