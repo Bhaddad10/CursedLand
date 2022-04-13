@@ -35,7 +35,9 @@ public class PlayerController : MonoBehaviour
 
     public Transform firePosition;
     public GameObject projectile;
-    
+
+    public LayerMask npcLayerMask;
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
@@ -45,8 +47,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move();
-        attack();
+        talkToNpc();
+        _movement = Vector2.zero;
+        if (!DialogManager.Instance.IsDialogActive())
+        {
+            move();
+            attack();
+        }
         animate();
     }
 
@@ -122,5 +129,23 @@ public class PlayerController : MonoBehaviour
 
         //Lógica de rotação do objeto:
         //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
+    }
+
+    void talkToNpc()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            //Debug.Log("Pressed X.");
+            var closeObjects = Physics2D.OverlapCircleAll(_rigidbody.position, 1.5f, npcLayerMask);
+            foreach (Collider2D collider in closeObjects)
+            {
+                if (collider.tag == "NPC")
+                {
+                    //Debug.Log("Found npc close.");
+                    NpcController npcController = collider.gameObject.GetComponent<NpcController>();
+                    DialogManager.Instance.StartDialog(npcController.dialog);
+                }
+            }
+        }
     }
 }
