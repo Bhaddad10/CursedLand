@@ -9,18 +9,27 @@ public class DialogManager : IPersistentSingleton<DialogManager>
     public Text nameText;
     public Text dialogText;
 
+    private bool bDialogActive = false;
+
     private Queue<string> sentences;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
-        dialogBox.SetActive(false);
+        //dialogBox.SetActive(bDialogActive);
     }
 
     public void StartDialog(Dialog dialog)
     {
-        dialogBox.SetActive(true);
+        if (bDialogActive)
+        {
+            DisplayNextSentence();
+            return;
+        }
+
+        bDialogActive = true;
+        dialogBox.SetActive(bDialogActive);
         nameText.text = dialog.name;
         sentences.Clear();
         foreach (string sentence in dialog.sentences)
@@ -44,7 +53,13 @@ public class DialogManager : IPersistentSingleton<DialogManager>
 
     void EndDialog()
     {
-        dialogBox.SetActive(false);
+        bDialogActive = false;
+        dialogBox.SetActive(bDialogActive);
         Debug.Log("End of conversation.");
+    }
+
+    public bool IsDialogActive()
+    {
+        return bDialogActive;
     }
 }
