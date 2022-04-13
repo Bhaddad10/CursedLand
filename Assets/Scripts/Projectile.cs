@@ -23,5 +23,12 @@ public class Projectile : MonoBehaviour
         //Todo: causa dano ao inimigo
         Destroy(gameObject);
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+
+
 }
 //código inspirado neste video: https://www.youtube.com/watch?v=uKWbNWPAZq4&t
