@@ -251,7 +251,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 27.000015}
-  m_SizeDelta: {x: -119.102295, y: 154.64511}
+  m_SizeDelta: {x: -119.1023, y: 122.6145}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &7228482694114247790
 CanvasRenderer:
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6509434, g: 0.56804025, b: 0.30397826, a: 1}
+  m_Color: {r: 0.07450981, g: 0.3137255, b: 0.35686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
