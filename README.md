@@ -9,8 +9,7 @@ Pixel art top-down basic: https://cainos.itch.io/pixel-art-top-down-basic
 
 ### Personagens:
 
-Universal LPC Spritesheet generator: https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Humanlike_white
-
+Universal LPC Spritesheet generator: https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator
 ### Personagem principal:
 Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Michael Whitlock (bigbeargames), Tracy, bluecarrot16, Thane Brimhall (pennomi), laetissima, David Conway Jr. (JaidynReiman), Joe White, Matthew Krohn (makrohn), Dr. Jamgo
 
