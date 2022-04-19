@@ -480,21 +480,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 7228482694114247791, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228482694114247791, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
-      propertyPath: m_Color.b
-      value: 0.35686275
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228482694114247791, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
-      propertyPath: m_Color.g
-      value: 0.3137255
-      objectReference: {fileID: 0}
-    - target: {fileID: 7228482694114247791, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
-      propertyPath: m_Color.r
-      value: 0.07450981
+    - target: {fileID: 7228482694114247789, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660b4cf1ef6dd8445b3a19837a424c10, type: 3}
