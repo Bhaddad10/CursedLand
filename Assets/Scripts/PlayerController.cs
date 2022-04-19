@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Velocidade do personagem
     public float speed = 10.0f;
-    public int pickable = 0;
 
+    //Variaveis para definir um intervalo de ataque
     public float cooldown = 1.5f;
     public float nextSkill;
 
@@ -16,14 +17,26 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 _movement = Vector2.zero;
 
+    //Variaveis para guardar a ultima posição do personagem
     public float lastX = 0;
     public float lastY = 0;
-
+    
+    //Variavel para guardar a informação de ataque do personagem
     private bool bIsAttaking = false;
 
+    //Variaveis para leitura mais rápida
     private static readonly int InputXHash = Animator.StringToHash("inputX");
     private static readonly int InputYHash = Animator.StringToHash("inputY");
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
+    private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
+    private static readonly int lastXHash = Animator.StringToHash("lastX");
+    private static readonly int lastYHash = Animator.StringToHash("lastY");
+    private static readonly string IdleTreeAnimation = "Idle Tree";
+
+    public Transform firePosition;
+    public GameObject projectile;
+
+    public LayerMask npcLayerMask;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -31,17 +44,16 @@ public class PlayerController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
-        move();
-        attack();
+        talkToNpc();
+        _movement = Vector2.zero;
+        if (!DialogManager.Instance.IsDialogActive())
+        {
+            move();
+            attack();
+        }
         animate();
     }
 
@@ -52,11 +64,13 @@ public class PlayerController : MonoBehaviour
         _rigidbody.velocity = _velocity;
         
     }
+    //Método para captar o input e validar o movimento do personagem 
     void move()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
-        if (!bIsAttaking)
+                            //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
+        if (!bIsAttaking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -65,44 +79,73 @@ public class PlayerController : MonoBehaviour
             _movement = Vector2.zero;
         }
     }
+    //Método para ativar a as arovres de animação
     void animate()
     {
         if (_movement.sqrMagnitude > 0.01f)
         {
-            _animator.SetBool("isMoving", true);
+            _animator.SetBool(IsMovingHash, true);
            
             lastX = _movement.x;
             lastY = _movement.y;
 
-            _animator.SetFloat("lastX", lastX);
-            _animator.SetFloat("lastY", lastY);
+            _animator.SetFloat(lastXHash, lastX);
+            _animator.SetFloat(lastYHash, lastY);
         }
         else
         {
-            _animator.SetBool("isMoving", false);
+            _animator.SetBool(IsMovingHash, false);
             _rigidbody.velocity = Vector2.zero;
         }
         _animator.SetFloat(InputXHash, _movement.x);
         _animator.SetFloat(InputYHash, _movement.y);
     }
+    //Método para verificar quando o jogador atacar
     void attack()
     {
-
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        
-
         if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill)
         {
             bIsAttaking = true;
             nextSkill = Time.time + cooldown;
-            //_animator.SetBool("Attacking", bIsAttaking);
-            _animator.SetTrigger("Attacking");
+            _animator.SetTrigger(InputAttackHash);
         }
-        else if(animStateInfo.IsName("Idle Tree") && bIsAttaking)
+        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
         {
             bIsAttaking = false;
-            // Todo: Spawn fire ball
-            //_animator.SetBool("Attacking", bIsAttaking);
+            fireBall();
+        }
+    }
+    //Método para spawnar uma bola de fogo
+    void fireBall()
+    {
+        Vector2 direction = new Vector2(lastX, lastY).normalized;
+        Vector3 distance = new Vector3(lastX, lastY * 1.5f, 0);
+
+        GameObject magicProjectile = Instantiate(projectile, firePosition.position + distance, Quaternion.identity);
+        
+        magicProjectile.GetComponent<Rigidbody2D>().velocity = direction * magicProjectile.GetComponent<Projectile>().speed;
+        magicProjectile.transform.Rotate(0f, 0f, Mathf.Atan2(lastY, lastX) * Mathf.Rad2Deg);
+
+        //Lógica de rotação do objeto:
+        //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
+    }
+
+    void talkToNpc()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            //Debug.Log("Pressed X.");
+            var closeObjects = Physics2D.OverlapCircleAll(_rigidbody.position, 1.5f, npcLayerMask);
+            foreach (Collider2D collider in closeObjects)
+            {
+                if (collider.tag == "NPC")
+                {
+                    //Debug.Log("Found npc close.");
+                    NpcController npcController = collider.gameObject.GetComponent<NpcController>();
+                    DialogManager.Instance.StartDialog(npcController.dialog);
+                }
+            }
         }
     }
 }
