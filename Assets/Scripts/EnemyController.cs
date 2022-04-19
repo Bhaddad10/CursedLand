@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator animator;
+
+    public int health = 100;
+
+    private void Awake()
     {
-        
+        animator = GetComponent<Animator>();
+    }
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            die();
+        }
+    }
+    public void die()
+    {
+        Debug.Log("inimigo morreu");
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, 5f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //Código inspirado e adaptado deste video : https://www.youtube.com/watch?v=wkKsl1Mfp5M&t
 }

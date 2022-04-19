@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 8f;
     public GameObject inpactEffectPrefab;
+    public int damage = 50;
 
     private Rigidbody2D _rigidbody;
 
@@ -20,15 +21,17 @@ public class Projectile : MonoBehaviour
     {
         GameObject effect = Instantiate(inpactEffectPrefab, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
-        //Todo: causa dano ao inimigo
+        EnemyController enemy =collision.GetComponent<EnemyController>();
         Destroy(gameObject);
+        if (enemy != null)
+        {
+            enemy.takeDamage(damage);
+        }
     }
 
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
-
-
 }
 //código inspirado neste video: https://www.youtube.com/watch?v=uKWbNWPAZq4&t
