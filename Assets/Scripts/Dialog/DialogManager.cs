@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Dialog System inspired on https://www.youtube.com/watch?v=_nRzoTzeyxU,
+ * customized for project characteristics
+ */
 public class DialogManager : IPersistentSingleton<DialogManager>
 {
     public GameObject dialogBox;
