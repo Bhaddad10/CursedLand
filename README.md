@@ -1,16 +1,26 @@
 # CursedLand
 
-## Sprites utilizados:
+## Gênero
+:crossed_swords: Action RPG
 
-### Terrenos e estruturas:
+## Tecnlogias utilizadas :desktop_computer:
+:space_invader: C#
+
+:joystick: Unity
+
+## Sprites utilizados :framed_picture:
+
+### Terreno e estruturas 
 Serene Village: https://limezu.itch.io/serenevillagerevamped
 
 Pixel art top-down basic: https://cainos.itch.io/pixel-art-top-down-basic
 
-### Personagens:
+### Personagens
+Universal LPC Spritesheet generator:     https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator
 
-Universal LPC Spritesheet generator: https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator
-### Personagem principal:
+<details>
+<summary>Personagem principal</summary>
+<br>
 Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Michael Whitlock (bigbeargames), Tracy, bluecarrot16, Thane Brimhall (pennomi), laetissima, David Conway Jr. (JaidynReiman), Joe White, Matthew Krohn (makrohn), Dr. Jamgo
 
 - body/male/human/olive.png: by Stephen Challener (Redshrike), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
@@ -39,8 +49,10 @@ Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Michael Whitl
 
 - weapon/thrust/male/simple_staff.png: by Dr. Jamgo. License(s): CC0. 
     - https://opengameart.org/content/lpc-simple-staff
-
-### Npc: 
+</details>
+<details >
+<summary>NPC</summary>
+<br>
 Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn (makrohn), ElizaWy, bluecarrot16, Michael Whitlock (bigbeargames), David Conway Jr. (JaidynReiman)
 
 - body/female/human/white.png: by Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn (makrohn). License(s): CC-BY-SA 3.0, GPL 3.0. 
@@ -76,6 +88,12 @@ Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn
 
 - feet/armor/female/4.png: by Michael Whitlock (bigbeargames), Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. 
     - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
+</details>
 
+## Autores
+[Gustavo Lucas da Rosa](https://github.com/guslucas) <br>
+[Bruno Lemos Haddad](https://github.com/Bhaddad10)
+<hr>  
 
-
+## Orientador e Professor
+Cesar Silva @ UNIFAJ
