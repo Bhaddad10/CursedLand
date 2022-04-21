@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
 
+    public Text currentStatusText;
+
     public GameObject buyStatusPanel;
     public Text buyStatusText;
     public ShopItem[] items;
@@ -31,7 +33,7 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        currentStatusText.text = player.playerState.credits.ToString();
     }
 
     void tryBuyItem(ShopItem item)
