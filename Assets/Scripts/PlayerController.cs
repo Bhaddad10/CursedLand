@@ -6,6 +6,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private bool DEBUG = true;
+
+    public PlayerState playerState;
+    [Space]
+    [Space]
     //Velocidade do personagem
     public float speed = 10.0f;
 
@@ -53,6 +57,7 @@ public class PlayerController : MonoBehaviour
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
+        //playerState.Initialize();
     }
     // Update is called once per frame
     void Update()

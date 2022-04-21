@@ -98,6 +98,9 @@ https://assetstore.unity.com/packages/2d/environments/pixel-potions-with-animati
 #### Background Image
 https://www.artstation.com/artwork/mq5GNd
 
+### Game Items
+https://assetstore.unity.com/packages/2d/environments/free-game-items-131764
+
 ## Autores
 [Gustavo Lucas da Rosa](https://github.com/guslucas) <br>
 [Bruno Lemos Haddad](https://github.com/Bhaddad10)

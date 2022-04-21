@@ -7,8 +7,10 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
 
-    public Text buyStatus;
+    public GameObject buyStatusPanel;
+    public Text buyStatusText;
     public ShopItem[] items;
+    public PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,10 @@ public class ShopManager : MonoBehaviour
     {
         foreach (ShopItem item in items)
         {
-            item.button.onClick.AddListener(() => buyItem(item));
+            item.button.onClick.AddListener(() => tryBuyItem(item));
         }
-        buyStatus.text = "";
+        buyStatusPanel.SetActive(false);
+        buyStatusText.text = "";
     }
 
     // Update is called once per frame
@@ -31,15 +34,17 @@ public class ShopManager : MonoBehaviour
         
     }
 
-    public void Buy()
+    void tryBuyItem(ShopItem item)
     {
-        
-    }
+        if (player.playerState.credits < item.price)
+        {
+            Debug.Log("Out of credits..");
+            return;
+        }
 
-    void buyItem(ShopItem item)
-    {
-        buyStatus.enabled = true;
-        buyStatus.text = "-" + item.credits;
+        buyStatusPanel.SetActive(true);
+        buyStatusText.text = "-" + item.price;
+        player.playerState.credits -= item.price;
         Debug.Log("Buying " + item.name);
         StartCoroutine(DelayAction(1f));
     }
@@ -49,6 +54,6 @@ public class ShopManager : MonoBehaviour
         //Wait for the specified delay time before continuing.
         yield return new WaitForSeconds(delayTime);
         //Do the action after the delay time has finished.
-        buyStatus.enabled = false;
+        buyStatusPanel.SetActive(false);
     }
 }
