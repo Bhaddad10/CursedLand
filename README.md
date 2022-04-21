@@ -90,6 +90,10 @@ Authors: Stephen Challener (Redshrike), Johannes Sjölund (wulax), Matthew Krohn
     - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites
 </details>
 
+### Poções
+Pixel Potions (with Animation) from Porforever
+https://assetstore.unity.com/packages/2d/environments/pixel-potions-with-animation-118801
+
 ## Autores
 [Gustavo Lucas da Rosa](https://github.com/guslucas) <br>
 [Bruno Lemos Haddad](https://github.com/Bhaddad10)
