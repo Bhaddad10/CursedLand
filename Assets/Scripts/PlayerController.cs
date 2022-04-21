@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool DEBUG = true;
     //Velocidade do personagem
     public float speed = 10.0f;
 
@@ -38,18 +39,31 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask npcLayerMask;
 
+    private bool bSceneContainsDialogManager;
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+
+        if (!DialogManager.Instance)
+        {
+            bSceneContainsDialogManager = false;
+            if (DEBUG)
+                Debug.Log("No DialogManager found for this scene. Running without dialogs.");
+        }
     }
     // Update is called once per frame
     void Update()
     {
         talkToNpc();
         _movement = Vector2.zero;
-        if (!DialogManager.Instance.IsDialogActive())
+
+        // If scene doesn't contain DialogManager
+        //      or, if it does, and it's not on dialog
+        if (!bSceneContainsDialogManager || 
+            !DialogManager.Instance.IsDialogActive())
         {
             move();
             attack();
