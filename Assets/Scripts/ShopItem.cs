@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ShopItem
 {
     public string name;
+    public int credits;
     public GameObject gameObject;
     public Button button;
 
