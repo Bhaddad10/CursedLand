@@ -8,6 +8,7 @@ public class PlayerState
 {
 
     public int credits = 50;
+    public Dictionary<string, Potion> items = new Dictionary<string, Potion>();
 
     /*public Text liveText;
     public Scrollbar healthSlider;

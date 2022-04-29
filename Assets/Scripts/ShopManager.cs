@@ -46,8 +46,8 @@ public class ShopManager : MonoBehaviour
 
         buyStatusPanel.SetActive(true);
         buyStatusText.text = "-" + item.price;
-        player.playerState.credits -= item.price;
-        Debug.Log("Buying " + item.name);
+        player.buyItem(item);
+        //Debug.Log("Buying " + item.name);
         StartCoroutine(DelayAction(1f));
     }
 
@@ -57,5 +57,11 @@ public class ShopManager : MonoBehaviour
         yield return new WaitForSeconds(delayTime);
         //Do the action after the delay time has finished.
         buyStatusPanel.SetActive(false);
+    }
+
+    public void exitShop()
+    {
+        Debug.Log("Exitting shop.");
+        // GameManager.changeToPreviousScene()
     }
 }
