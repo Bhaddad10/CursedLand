@@ -35,6 +35,25 @@ public class PlayerController : MonoBehaviour
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int lastXHash = Animator.StringToHash("lastX");
+
+    internal void buyItem(ShopItem item)
+    {
+        this.playerState.credits -= item.price;
+        if (this.playerState.items.ContainsKey(item.name))
+        {
+            this.playerState.items[item.name].quantity += 1;
+        }
+        else
+        {
+            this.playerState.items.Add(item.name, new Potion(1));
+        }
+        //Debug.Log(this.playerState.items.ToString());
+        foreach (var x in this.playerState.items)
+        {
+            Debug.Log(x.Key + " - " + x.Value.quantity);
+        }
+    }
+
     private static readonly int lastYHash = Animator.StringToHash("lastY");
     private static readonly string IdleTreeAnimation = "Idle Tree";
 
@@ -50,15 +69,19 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        //playerState.Initialize();
+    }
 
+    private void Start()
+    {
         if (!DialogManager.Instance)
         {
             bSceneContainsDialogManager = false;
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
-        //playerState.Initialize();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -162,7 +185,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug.Log("Found npc close.");
                     NpcController npcController = collider.gameObject.GetComponent<NpcController>();
-                    DialogManager.Instance.StartDialog(npcController.dialog);
+                    DialogManager.Instance.StartDialog(npcController);
+                    return;
                 }
             }
         }
