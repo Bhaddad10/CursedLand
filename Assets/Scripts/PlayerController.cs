@@ -69,15 +69,19 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        //playerState.Initialize();
+    }
 
+    private void Start()
+    {
         if (!DialogManager.Instance)
         {
             bSceneContainsDialogManager = false;
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
-        //playerState.Initialize();
     }
+
     // Update is called once per frame
     void Update()
     {
