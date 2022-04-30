@@ -156,3 +156,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   inpactEffectPrefab: {fileID: 2719500525979957516, guid: 2df268b585030464594cbe5279a5b4c4, type: 3}
+  damage: 50
