@@ -61,7 +61,7 @@ public class ShopManager : MonoBehaviour
 
     public void exitShop()
     {
-        Debug.Log("Exitting shop.");
-        // GameManager.changeToPreviousScene()
+        // Debug.Log("Exitting shop.");
+        GameManager.Instance.ChangeToPreviousScene();
     }
 }

@@ -181,7 +181,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug.Log("Found npc close.");
                     NpcController npcController = collider.gameObject.GetComponent<NpcController>();
-                    DialogManager.Instance.StartDialog(npcController.dialog);
+                    DialogManager.Instance.StartDialog(npcController);
+                    return;
                 }
             }
         }

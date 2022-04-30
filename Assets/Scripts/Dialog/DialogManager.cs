@@ -16,6 +16,7 @@ public class DialogManager : IPersistentSingleton<DialogManager>
     private bool bDialogActive = false;
 
     private Queue<string> sentences;
+    private NpcController npc;
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +25,10 @@ public class DialogManager : IPersistentSingleton<DialogManager>
         //dialogBox.SetActive(bDialogActive);
     }
 
-    public void StartDialog(Dialog dialog)
+    public void StartDialog(NpcController npcController)
     {
+        npc = npcController;
+        Dialog dialog = npcController.dialog;
         if (bDialogActive)
         {
             DisplayNextSentence();
@@ -59,6 +62,11 @@ public class DialogManager : IPersistentSingleton<DialogManager>
     {
         bDialogActive = false;
         dialogBox.SetActive(bDialogActive);
+        if (npc is MerchantNpcController)
+        {
+            ((MerchantNpcController) npc).actionAfterDialog();
+            npc = null;
+        }
         Debug.Log("End of conversation.");
     }
 
