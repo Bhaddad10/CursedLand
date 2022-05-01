@@ -10,6 +10,33 @@ public class PlayerState
     public int credits = 50;
     public Dictionary<string, Potion> items = new Dictionary<string, Potion>();
 
+    internal bool tryBuyItem(ShopItem item)
+    {
+        if (credits < item.price)
+        {
+            Debug.Log("Out of credits..");
+            return false;
+        }
+
+        credits -= item.price;
+        if (items.ContainsKey(item.name))
+        {
+            items[item.name].quantity += 1;
+        }
+        else
+        {
+            items.Add(item.name, new Potion(1));
+        }
+
+        return true;
+
+        // Print inventory
+        /*foreach (var x in items)
+        {
+            Debug.Log(x.Key + " - " + x.Value.quantity);
+        }*/
+    }
+
     /*public Text liveText;
     public Scrollbar healthSlider;
     public Image healthImage;

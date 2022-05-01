@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class IPersistentSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _uniqueInstance;
+    public static string firstSceneName;
 
     public static T Instance
     {
@@ -12,6 +13,7 @@ public abstract class IPersistentSingleton<T> : MonoBehaviour where T : MonoBeha
             if (_uniqueInstance == null)
             {
                 _uniqueInstance = value;
+                firstSceneName = _uniqueInstance.gameObject.scene.name;
                 DontDestroyOnLoad(_uniqueInstance.gameObject);
             }
             else if (_uniqueInstance != value)
@@ -27,8 +29,8 @@ public abstract class IPersistentSingleton<T> : MonoBehaviour where T : MonoBeha
     {
         //_uniqueInstance = this as T;
         //Debug.LogWarning("Instancia singleton iniciada");
-        if (_uniqueInstance == null)
-            _uniqueInstance = this as T;
+        if (Instance == null)
+            Instance = this as T;
         else
         {
             DestroyImmediate(this.gameObject);

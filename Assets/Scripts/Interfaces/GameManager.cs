@@ -12,6 +12,8 @@ public class GameManager : IPersistentSingleton<GameManager>
     private string _currentScene;
     private string _previousScene;
 
+    public PlayerState playerState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +34,8 @@ public class GameManager : IPersistentSingleton<GameManager>
             Debug.LogError("Erro ao carregar a scene " + sceneName);
             return;
         }
-        //_previousScene = _currentScene ?? firstSceneName;
-        _previousScene = _currentScene ?? gameObject.scene.name;
+        _previousScene = _currentScene ?? firstSceneName;
+        //_previousScene = _currentScene ?? gameObject.scene.name;
         _currentScene = sceneName;
         asyncOperation.completed += OnSceneLoaded;
     }

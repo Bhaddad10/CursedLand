@@ -33,12 +33,12 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentStatusText.text = player.playerState.credits.ToString();
+        currentStatusText.text = GameManager.Instance.playerState.credits.ToString();
     }
 
     void tryBuyItem(ShopItem item)
     {
-        bool bought = player.tryBuyItem(item);
+        bool bought = GameManager.Instance.playerState.tryBuyItem(item);
         if (!bought) return;
 
         buyStatusPanel.SetActive(true);
