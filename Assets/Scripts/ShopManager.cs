@@ -33,20 +33,17 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentStatusText.text = player.playerState.credits.ToString();
+        currentStatusText.text = GameManager.Instance.playerState.credits.ToString();
     }
 
     void tryBuyItem(ShopItem item)
     {
-        if (player.playerState.credits < item.price)
-        {
-            Debug.Log("Out of credits..");
-            return;
-        }
+        bool bought = GameManager.Instance.playerState.tryBuyItem(item);
+        if (!bought) return;
 
         buyStatusPanel.SetActive(true);
         buyStatusText.text = "-" + item.price;
-        player.buyItem(item);
+        
         //Debug.Log("Buying " + item.name);
         StartCoroutine(DelayAction(1f));
     }

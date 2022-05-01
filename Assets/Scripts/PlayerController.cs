@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private bool DEBUG = true;
 
-    public PlayerState playerState;
     [Space]
     [Space]
     //Velocidade do personagem
@@ -35,24 +34,6 @@ public class PlayerController : MonoBehaviour
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int lastXHash = Animator.StringToHash("lastX");
-
-    internal void buyItem(ShopItem item)
-    {
-        this.playerState.credits -= item.price;
-        if (this.playerState.items.ContainsKey(item.name))
-        {
-            this.playerState.items[item.name].quantity += 1;
-        }
-        else
-        {
-            this.playerState.items.Add(item.name, new Potion(1));
-        }
-        //Debug.Log(this.playerState.items.ToString());
-        foreach (var x in this.playerState.items)
-        {
-            Debug.Log(x.Key + " - " + x.Value.quantity);
-        }
-    }
 
     private static readonly int lastYHash = Animator.StringToHash("lastY");
     private static readonly string IdleTreeAnimation = "Idle Tree";
