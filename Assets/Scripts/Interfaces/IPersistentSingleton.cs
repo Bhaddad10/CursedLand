@@ -36,7 +36,7 @@ public abstract class IPersistentSingleton<T> : MonoBehaviour where T : MonoBeha
         }
     }
 
-    private void Reset()
+    /*private void Reset()
     {
 #if UNITY_EDITOR
         if (_uniqueInstance == null)
@@ -55,7 +55,7 @@ public abstract class IPersistentSingleton<T> : MonoBehaviour where T : MonoBeha
     {
         if (_uniqueInstance == this)
             _uniqueInstance = null;
-    }
+    }*/
 
 
 }
