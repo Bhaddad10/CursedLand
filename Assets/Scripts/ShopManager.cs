@@ -12,7 +12,6 @@ public class ShopManager : MonoBehaviour
     public GameObject buyStatusPanel;
     public Text buyStatusText;
     public ShopItem[] items;
-    public PlayerController player;
 
     // Start is called before the first frame update
     void Start()

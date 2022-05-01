@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask npcLayerMask;
 
-    private bool bSceneContainsDialogManager;
+    private bool bSceneContainsDialogManager = true;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
