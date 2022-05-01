@@ -32,7 +32,8 @@ public class GameManager : IPersistentSingleton<GameManager>
             Debug.LogError("Erro ao carregar a scene " + sceneName);
             return;
         }
-        _previousScene = _currentScene == null ? gameObject.scene.name : _currentScene;
+        //_previousScene = _currentScene ?? firstSceneName;
+        _previousScene = _currentScene ?? gameObject.scene.name;
         _currentScene = sceneName;
         asyncOperation.completed += OnSceneLoaded;
     }

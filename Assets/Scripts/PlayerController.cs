@@ -36,22 +36,31 @@ public class PlayerController : MonoBehaviour
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int lastXHash = Animator.StringToHash("lastX");
 
-    internal void buyItem(ShopItem item)
+    internal bool tryBuyItem(ShopItem item)
     {
-        this.playerState.credits -= item.price;
-        if (this.playerState.items.ContainsKey(item.name))
+        if (playerState.credits < item.price)
         {
-            this.playerState.items[item.name].quantity += 1;
+            Debug.Log("Out of credits..");
+            return false;
+        }
+
+        playerState.credits -= item.price;
+        if (playerState.items.ContainsKey(item.name))
+        {
+            playerState.items[item.name].quantity += 1;
         }
         else
         {
-            this.playerState.items.Add(item.name, new Potion(1));
+            playerState.items.Add(item.name, new Potion(1));
         }
-        //Debug.Log(this.playerState.items.ToString());
-        foreach (var x in this.playerState.items)
+        
+        return true;
+
+        // Print inventory
+        /*foreach (var x in playerState.items)
         {
             Debug.Log(x.Key + " - " + x.Value.quantity);
-        }
+        }*/
     }
 
     private static readonly int lastYHash = Animator.StringToHash("lastY");

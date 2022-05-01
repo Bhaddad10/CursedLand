@@ -38,15 +38,12 @@ public class ShopManager : MonoBehaviour
 
     void tryBuyItem(ShopItem item)
     {
-        if (player.playerState.credits < item.price)
-        {
-            Debug.Log("Out of credits..");
-            return;
-        }
+        bool bought = player.tryBuyItem(item);
+        if (!bought) return;
 
         buyStatusPanel.SetActive(true);
         buyStatusText.text = "-" + item.price;
-        player.buyItem(item);
+        
         //Debug.Log("Buying " + item.name);
         StartCoroutine(DelayAction(1f));
     }
