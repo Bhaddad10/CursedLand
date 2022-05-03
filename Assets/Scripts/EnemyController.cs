@@ -5,60 +5,62 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private Animator _animator;
-    private Rigidbody2D _rigidbody;
     private Transform target;
-
-    private Vector2 _movement = Vector2.zero;
-
-    public float attackX = 0;
-    public float attackY = 0;
 
     public int health = 100;
     public float speed = 9;
 
+    private float attackX = 0;
+    private float attackY = 0;
 
     public float followRange = 5f;
+    public float maxRange = 1f;
+
     public float attackRange = 1.5f;
-    public float cooldown = 2f;
+    public float cooldown = 1f;
     private float nextAttack;
 
-    private bool bIsAttacking = false;
+    private bool isDead = false;
+    private bool isAttacking = false;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
     }
     public void Update()
     {
-        if(Vector3.Distance(target.position, transform.position) <= followRange)
+        move();
+    }
+    public void move()
+    {
+        if (Vector3.Distance(target.position, transform.position) <= followRange && !isDead && !isAttacking)
         {
             followPlayer();
-            
+
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
             {
-                stop();
                 attack();
+            }
+            else
+            {
+                isAttacking = false;
             }
         }
         else
         {
+            isAttacking = false;
             stop();
         }
     }
     public void followPlayer()
     {
         _animator.SetBool("isMoving", true);
+
         _animator.SetFloat("moveX", target.position.x - transform.position.x);
         _animator.SetFloat("moveY", target.position.y - transform.position.y);
 
-        _animator.SetFloat("lastX", attackX = target.position.x);
-        _animator.SetFloat("lastY", attackY = target.position.y);
-
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-        //float dist = Vector3.Distance(target.position, transform.position);
-        //Debug.Log(dist);
     }
     public void stop()
     {
@@ -68,21 +70,26 @@ public class EnemyController : MonoBehaviour
     {     
         if(Time.time > nextAttack)
         {
-            bIsAttacking = true;
+            isAttacking = true;
             nextAttack = Time.time + cooldown;
-            _animator.SetTrigger("attack");
+
+            _animator.SetFloat("lastX", attackX = target.position.x);
+            _animator.SetFloat("lastY", attackY = target.position.y);
+
+            _animator.SetTrigger("isAttacking");
         }
-        else if (bIsAttacking)
+        else
         {
-            bIsAttacking = false;
+            isAttacking = false;         
         }
-        //float dist = Vector3.Distance(target.position, transform.position);
-        //Debug.Log(dist);
+    }
+    public void dealDamage()
+    {
+        
     }
     public void takeDamage(int damage)
     {
         health -= damage;
-
         if (health <= 0)
         {
             die();
@@ -90,9 +97,15 @@ public class EnemyController : MonoBehaviour
     }
     public void die()
     {
-        Debug.Log("inimigo morreu");
+        isDead = true;
         _animator.SetBool("isDead", true);
         Destroy(gameObject, 5f);
+    }
+
+    public void distanceFromPlayer()
+    {
+        float dist = Vector3.Distance(target.position, transform.position);
+        Debug.Log(dist);
     }
     //Logica de receber dano e morrer inspirado e adaptado deste video : https://www.youtube.com/watch?v=wkKsl1Mfp5M&t
     //Logica de seguir o jogador adaptado deste video https://www.youtube.com/watch?v=dy8hkDmygRI&t

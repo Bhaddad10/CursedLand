@@ -115,7 +115,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.0001
-  m_LinearDrag: 0
+  m_LinearDrag: 20
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -135,10 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66af6b1e119d223478ca0b651172546e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastX: 0
-  lastY: 0
   health: 100
   speed: 3
+  followRange: 5
+  maxRange: 1
+  attackRange: 1.5
+  cooldown: 1
 --- !u!95 &4774688919095034541
 Animator:
   serializedVersion: 3

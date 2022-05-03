@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     [Space]
     //Velocidade do personagem
+    public int hp = 150;
     public float speed = 10.0f;
 
     //Variaveis para definir um intervalo de ataque
@@ -23,8 +24,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movement = Vector2.zero;
 
     //Variaveis para guardar a ultima posição do personagem
-    public float lastX = 0;
-    public float lastY = 0;
+    private float lastX = 0;
+    private float lastY = 0;
     
     //Variavel para guardar a informação de ataque do personagem
     private bool bIsAttacking = false;
