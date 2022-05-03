@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public float lastY = 0;
     
     //Variavel para guardar a informação de ataque do personagem
-    private bool bIsAttaking = false;
+    private bool bIsAttacking = false;
 
     //Variaveis para leitura mais rápida
     private static readonly int InputXHash = Animator.StringToHash("inputX");
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
                             //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
-        if (!bIsAttaking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
+        if (!bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -125,13 +125,13 @@ public class PlayerController : MonoBehaviour
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
         if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill)
         {
-            bIsAttaking = true;
+            bIsAttacking = true;
             nextSkill = Time.time + cooldown;
             _animator.SetTrigger(InputAttackHash);
         }
-        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
+        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttacking)
         {
-            bIsAttaking = false;
+            bIsAttacking = false;
             fireBall();
         }
     }
