@@ -7,7 +7,7 @@ using UnityEngine.UI;
  * Dialog System inspired on https://www.youtube.com/watch?v=_nRzoTzeyxU,
  * customized for project characteristics
  */
-public class DialogManager : IPersistentSingleton<DialogManager>
+public class DialogManager : MonoBehaviour
 {
     public GameObject dialogBox;
     public Text nameText;
@@ -18,9 +18,24 @@ public class DialogManager : IPersistentSingleton<DialogManager>
     private Queue<string> sentences;
     private NpcController npc;
 
+    //--
+    private static DialogManager _uniqueInstance;
+
+    public static DialogManager Instance
+    {
+        get { return _uniqueInstance; }
+    }
+    //--
+
+    void Awake()
+    {
+        _uniqueInstance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
         sentences = new Queue<string>();
         //dialogBox.SetActive(bDialogActive);
     }
@@ -73,5 +88,10 @@ public class DialogManager : IPersistentSingleton<DialogManager>
     public bool IsDialogActive()
     {
         return bDialogActive;
+    }
+
+    public void OnDestroy()
+    {
+        _uniqueInstance = null;
     }
 }
