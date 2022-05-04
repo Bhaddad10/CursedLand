@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask npcLayerMask;
 
-    private bool bSceneContainsDialogManager = true;
+    //private bool bSceneContainsDialogManager = true;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -55,9 +55,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (!DialogManager.Instance)
+        if (DialogManager.Instance != null)
         {
-            bSceneContainsDialogManager = false;
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
@@ -71,8 +70,7 @@ public class PlayerController : MonoBehaviour
 
         // If scene doesn't contain DialogManager
         //      or, if it does, and it's not on dialog
-        if (!bSceneContainsDialogManager || 
-            !DialogManager.Instance.IsDialogActive())
+        if (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive())
         {
             move();
             attack();
