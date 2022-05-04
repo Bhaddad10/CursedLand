@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4774688919095034539, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
       propertyPath: m_Name
       value: ZombieEnemy
