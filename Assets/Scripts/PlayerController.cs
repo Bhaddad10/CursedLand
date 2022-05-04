@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
         // If scene doesn't contain DialogManager
         //      or, if it does, and it's not on dialog
-        if (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive())
+        if (DialogManager.Instance == null || (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
         {
             move();
             attack();
