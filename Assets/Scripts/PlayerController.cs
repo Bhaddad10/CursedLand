@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private bool DEBUG = true;
 
-    public PlayerState playerState;
     [Space]
     [Space]
     //Velocidade do personagem
@@ -36,6 +35,7 @@ public class PlayerController : MonoBehaviour
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int lastXHash = Animator.StringToHash("lastX");
+
     private static readonly int lastYHash = Animator.StringToHash("lastY");
     private static readonly string IdleTreeAnimation = "Idle Tree";
 
@@ -44,22 +44,25 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask npcLayerMask;
 
-    private bool bSceneContainsDialogManager;
+    //private bool bSceneContainsDialogManager = true;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        //playerState.Initialize();
+    }
 
-        if (!DialogManager.Instance)
+    private void Start()
+    {
+        if (DialogManager.Instance != null)
         {
-            bSceneContainsDialogManager = false;
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
-        //playerState.Initialize();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -68,8 +71,7 @@ public class PlayerController : MonoBehaviour
 
         // If scene doesn't contain DialogManager
         //      or, if it does, and it's not on dialog
-        if (!bSceneContainsDialogManager || 
-            !DialogManager.Instance.IsDialogActive())
+        if (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive())
         {
             move();
             attack();
@@ -163,7 +165,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug.Log("Found npc close.");
                     NpcController npcController = collider.gameObject.GetComponent<NpcController>();
-                    DialogManager.Instance.StartDialog(npcController.dialog);
+                    DialogManager.Instance.StartDialog(npcController);
+                    return;
                 }
             }
         }
