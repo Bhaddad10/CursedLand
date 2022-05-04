@@ -30,20 +30,18 @@ public class EnemyController : MonoBehaviour
     }
     public void Update()
     {
-        move();
-    }
-    public void move()
-    {
         if (Vector3.Distance(target.position, transform.position) <= followRange && !isDead && !isAttacking)
         {
             followPlayer();
 
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
             {
+
                 attack();
             }
             else
             {
+
                 isAttacking = false;
             }
         }
@@ -80,6 +78,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            stop();
             isAttacking = false;         
         }
     }
