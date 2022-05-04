@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Space]
     [Space]
     //Velocidade do personagem
+    public int hp = 150;
     public float speed = 10.0f;
 
     //Variaveis para definir um intervalo de ataque
@@ -22,11 +23,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movement = Vector2.zero;
 
     //Variaveis para guardar a ultima posição do personagem
-    public float lastX = 0;
-    public float lastY = 0;
+    private float lastX = 0;
+    private float lastY = 0;
     
     //Variavel para guardar a informação de ataque do personagem
-    private bool bIsAttaking = false;
+    private bool bIsAttacking = false;
 
     //Variaveis para leitura mais rápida
     private static readonly int InputXHash = Animator.StringToHash("inputX");
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
                             //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
-        if (!bIsAttaking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
+        if (!bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -127,13 +128,13 @@ public class PlayerController : MonoBehaviour
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
         if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill)
         {
-            bIsAttaking = true;
+            bIsAttacking = true;
             nextSkill = Time.time + cooldown;
             _animator.SetTrigger(InputAttackHash);
         }
-        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
+        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttacking)
         {
-            bIsAttaking = false;
+            bIsAttacking = false;
             fireBall();
         }
     }
