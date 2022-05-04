@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     public float maxRange = 1f;
 
     public float attackRange = 1.5f;
-    public float cooldown = 1f;
+    public float cooldown = 2f;
     private float nextAttack;
 
     private bool isDead = false;
@@ -32,11 +32,11 @@ public class EnemyController : MonoBehaviour
     {
         if (Vector3.Distance(target.position, transform.position) <= followRange && !isDead && !isAttacking)
         {
-            followPlayer();
+            if (Vector3.Distance(target.position, transform.position) >= maxRange)
+                followPlayer();
 
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
             {
-
                 attack();
             }
             else
