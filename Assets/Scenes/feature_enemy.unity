@@ -130,26 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
-      propertyPath: speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
-      propertyPath: cooldown
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
-      propertyPath: maxRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
-      propertyPath: attackRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2654194240289047772, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
-      propertyPath: m_Mass
-      value: 500
-      objectReference: {fileID: 0}
     - target: {fileID: 4774688919095034539, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
       propertyPath: m_Name
       value: ZombieEnemy
@@ -351,10 +331,6 @@ PrefabInstance:
     - target: {fileID: 6195435063369298238, guid: 28c2b1f45431df54bab452a1eb906a75, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8096211824221311873, guid: 28c2b1f45431df54bab452a1eb906a75, type: 3}
-      propertyPath: m_Mass
-      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c2b1f45431df54bab452a1eb906a75, type: 3}
