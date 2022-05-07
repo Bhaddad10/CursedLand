@@ -131,8 +131,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
       propertyPath: cooldown
-      value: 2
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
+      propertyPath: maxRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 822243660715921032, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654194240289047772, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
+      propertyPath: m_Mass
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4774688919095034539, guid: 2ca3c547d5bb91f4ca8dc74b801e5f9d, type: 3}
       propertyPath: m_Name

@@ -8,17 +8,18 @@ public class EnemyController : MonoBehaviour
     private Transform target;
 
     public int health = 100;
-    public float speed = 9;
+    public float speed = 10.0f;
 
     private float attackX = 0;
     private float attackY = 0;
 
     public float followRange = 5f;
-    public float maxRange = 1f;
+    public float maxRange = 1.5f;
 
     public float attackRange = 1.5f;
-    public float cooldown = 2f;
+    public float cooldown = 1.5f;
     private float nextAttack;
+    public int damage = 30;
 
     private bool isDead = false;
     private bool isAttacking = false;
@@ -30,35 +31,36 @@ public class EnemyController : MonoBehaviour
     }
     public void Update()
     {
-        if (Vector3.Distance(target.position, transform.position) <= followRange && !isDead && !isAttacking)
+        followPlayer();
+    }
+    public void followPlayer()
+    {
+        if (Vector3.Distance(target.position, transform.position) <= followRange &&
+            Vector3.Distance(target.position, transform.position) >= maxRange && 
+            !isDead && !isAttacking)
         {
-            if (Vector3.Distance(target.position, transform.position) >= maxRange)
-                followPlayer();
+            _animator.SetBool("isMoving", true);
+
+            _animator.SetFloat("moveX", target.position.x - transform.position.x);
+            _animator.SetFloat("moveY", target.position.y - transform.position.y);
+
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
             {
+                Debug.Log("Tentando Atacar");
                 attack();
             }
             else
             {
-
                 isAttacking = false;
             }
         }
         else
         {
             isAttacking = false;
-            stop();
+            _animator.SetBool("isMoving", false);
         }
-    }
-    public void followPlayer()
-    {
-        _animator.SetBool("isMoving", true);
-
-        _animator.SetFloat("moveX", target.position.x - transform.position.x);
-        _animator.SetFloat("moveY", target.position.y - transform.position.y);
-
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
     }
     public void stop()
     {
@@ -69,6 +71,7 @@ public class EnemyController : MonoBehaviour
         if(Time.time > nextAttack)
         {
             isAttacking = true;
+
             nextAttack = Time.time + cooldown;
 
             _animator.SetFloat("lastX", attackX = target.position.x);
@@ -78,13 +81,8 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            stop();
-            isAttacking = false;         
+            isAttacking = false;
         }
-    }
-    public void dealDamage()
-    {
-        
     }
     public void takeDamage(int damage)
     {
@@ -100,7 +98,6 @@ public class EnemyController : MonoBehaviour
         _animator.SetBool("isDead", true);
         Destroy(gameObject, 5f);
     }
-
     public void distanceFromPlayer()
     {
         float dist = Vector3.Distance(target.position, transform.position);

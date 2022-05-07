@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     //Velocidade do personagem
     public int hp = 150;
     public float speed = 10.0f;
+    public bool isDead = false;
 
     //Variaveis para definir um intervalo de ataque
     public float cooldown = 1.5f;
@@ -92,7 +93,7 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
                             //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
-        if (!bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
+        if (!isDead && !bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -113,7 +114,7 @@ public class PlayerController : MonoBehaviour
 
             _animator.SetFloat(lastXHash, lastX);
             _animator.SetFloat(lastYHash, lastY);
-        }
+        }   
         else
         {
             _animator.SetBool(IsMovingHash, false);
@@ -126,7 +127,7 @@ public class PlayerController : MonoBehaviour
     void attack()
     {
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill)
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill && !isDead)
         {
             bIsAttacking = true;
             nextSkill = Time.time + cooldown;
@@ -151,8 +152,19 @@ public class PlayerController : MonoBehaviour
 
         //Lógica de rotação do objeto:
         //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
+    }    
+    public void takeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            die();
+        }
     }
-
+    public void die()
+    {
+        _animator.SetBool("isDead", true);
+    }
     void talkToNpc()
     {
         if (Input.GetKeyDown(KeyCode.X))
