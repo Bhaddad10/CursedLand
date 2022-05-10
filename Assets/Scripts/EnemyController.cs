@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private Animator _animator;
     private Transform target;
+    private SpriteRenderer sprite;
     PlayerController player;
 
     public int health = 100;
@@ -28,7 +29,8 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        target = FindObjectOfType<PlayerController>().transform;       
+        target = FindObjectOfType<PlayerController>().transform;
+        sprite = GetComponent<SpriteRenderer>();
     }
     public void Update()
     {
@@ -93,12 +95,12 @@ public class EnemyController : MonoBehaviour
         PlayerController player = collision.GetComponent<PlayerController>();
 
         player.takeDamage(damage);
-        //Destroy(collision.gameObject);         
-      
+        //Destroy(collision.gameObject);            
     }
     public void takeDamage(int damage)
     {
         health -= damage;
+        StartCoroutine(blinkSprite());
         if (health <= 0)
         {
             die();
@@ -109,6 +111,16 @@ public class EnemyController : MonoBehaviour
         isDead = true;
         _animator.SetBool("isDead", true);
         Destroy(gameObject, 5f);
+    }
+    IEnumerator blinkSprite()
+    {
+        for (float i = 0f; i < 1f; i += 0.3f)
+        {
+            sprite.enabled = false;
+            yield return new WaitForSeconds(0.3f);
+            sprite.enabled = true;
+            yield return new WaitForSeconds(0.3f);
+        }        
     }
     public void distanceFromPlayer()
     {

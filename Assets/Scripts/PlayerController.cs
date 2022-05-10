@@ -164,6 +164,7 @@ public class PlayerController : MonoBehaviour
     public void die()
     {
         _animator.SetBool("isDead", true);
+        isDead = true;
     }
     void talkToNpc()
     {
