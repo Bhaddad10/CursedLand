@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private Animator _animator;
     private Transform target;
+    PlayerController player;
 
     public int health = 100;
     public float speed = 10.0f;
@@ -27,11 +28,12 @@ public class EnemyController : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        target = FindObjectOfType<PlayerController>().transform;
+        target = FindObjectOfType<PlayerController>().transform;       
     }
     public void Update()
     {
         followPlayer();
+        
     }
     public void followPlayer()
     {
@@ -47,8 +49,7 @@ public class EnemyController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
 
             if (Vector3.Distance(target.position, transform.position) <= attackRange)
-            {
-                Debug.Log("Tentando Atacar");
+            {               
                 attack();
             }
             else
@@ -77,12 +78,23 @@ public class EnemyController : MonoBehaviour
             _animator.SetFloat("lastX", attackX = target.position.x);
             _animator.SetFloat("lastY", attackY = target.position.y);
 
-            _animator.SetTrigger("isAttacking");
+            _animator.SetBool("isAttacking", true);
+            Debug.Log("Tentando Atacar");
+            
         }
         else
         {
+            _animator.SetBool("isAttacking", false);
             isAttacking = false;
         }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        PlayerController player = collision.GetComponent<PlayerController>();
+
+        player.takeDamage(damage);
+        //Destroy(collision.gameObject);         
+      
     }
     public void takeDamage(int damage)
     {
@@ -90,7 +102,7 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             die();
-        }
+        }   
     }
     public void die()
     {

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool DEBUG = true;
+    private bool DEBUG = true   ;
 
     [Space]
     [Space]
@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int lastXHash = Animator.StringToHash("lastX");
-
     private static readonly int lastYHash = Animator.StringToHash("lastY");
     private static readonly string IdleTreeAnimation = "Idle Tree";
 
@@ -156,6 +155,7 @@ public class PlayerController : MonoBehaviour
     public void takeDamage(int damage)
     {
         hp -= damage;
+        Debug.Log("JOGADOR TOMANDO DANO");
         if (hp <= 0)
         {
             die();
