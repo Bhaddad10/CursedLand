@@ -5,8 +5,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool DEBUG = true   ;
+
+    [Space]
+    [Space]
     //Velocidade do personagem
+    public int hp = 150;
     public float speed = 10.0f;
+    public bool isDead = false;
 
     //Variaveis para definir um intervalo de ataque
     public float cooldown = 1.5f;
@@ -18,11 +24,11 @@ public class PlayerController : MonoBehaviour
     private Vector2 _movement = Vector2.zero;
 
     //Variaveis para guardar a ultima posição do personagem
-    public float lastX = 0;
-    public float lastY = 0;
+    private float lastX = 0;
+    private float lastY = 0;
     
     //Variavel para guardar a informação de ataque do personagem
-    private bool bIsAttaking = false;
+    private bool bIsAttacking = false;
 
     //Variaveis para leitura mais rápida
     private static readonly int InputXHash = Animator.StringToHash("inputX");
@@ -38,18 +44,34 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask npcLayerMask;
 
+    //private bool bSceneContainsDialogManager = true;
+
     // Awake is called when the script instance is being loaded
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        //playerState.Initialize();
     }
+
+    private void Start()
+    {
+        if (DialogManager.Instance != null)
+        {
+            if (DEBUG)
+                Debug.Log("No DialogManager found for this scene. Running without dialogs.");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         talkToNpc();
         _movement = Vector2.zero;
-        if (!DialogManager.Instance.IsDialogActive())
+
+        // If scene doesn't contain DialogManager
+        //      or, if it does, and it's not on dialog
+        if (DialogManager.Instance == null || (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
         {
             move();
             attack();
@@ -70,7 +92,7 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
                             //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
-        if (!bIsAttaking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
+        if (!isDead && !bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -91,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
             _animator.SetFloat(lastXHash, lastX);
             _animator.SetFloat(lastYHash, lastY);
-        }
+        }   
         else
         {
             _animator.SetBool(IsMovingHash, false);
@@ -104,15 +126,15 @@ public class PlayerController : MonoBehaviour
     void attack()
     {
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill)
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill && !isDead)
         {
-            bIsAttaking = true;
+            bIsAttacking = true;
             nextSkill = Time.time + cooldown;
             _animator.SetTrigger(InputAttackHash);
         }
-        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttaking)
+        else if(animStateInfo.IsName(IdleTreeAnimation) && bIsAttacking)
         {
-            bIsAttaking = false;
+            bIsAttacking = false;
             fireBall();
         }
     }
@@ -129,8 +151,21 @@ public class PlayerController : MonoBehaviour
 
         //Lógica de rotação do objeto:
         //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
+    }    
+    public void takeDamage(int damage)
+    {
+        hp -= damage;
+        Debug.Log("JOGADOR TOMANDO DANO");
+        if (hp <= 0)
+        {
+            die();
+        }
     }
-
+    public void die()
+    {
+        _animator.SetBool("isDead", true);
+        isDead = true;
+    }
     void talkToNpc()
     {
         if (Input.GetKeyDown(KeyCode.X))
@@ -143,7 +178,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //Debug.Log("Found npc close.");
                     NpcController npcController = collider.gameObject.GetComponent<NpcController>();
-                    DialogManager.Instance.StartDialog(npcController.dialog);
+                    DialogManager.Instance.StartDialog(npcController);
+                    return;
                 }
             }
         }

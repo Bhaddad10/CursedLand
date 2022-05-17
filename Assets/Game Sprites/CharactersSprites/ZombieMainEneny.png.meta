@@ -637,601 +637,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ZombieMainEneny_0
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 1282
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a64388b897be1bf10800000000000000
-      internalID: 2283865393318081642
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 1282
-        width: 28
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3029601d091b43ad0800000000000000
-      internalID: -2723356639112031741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_2
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 1282
-        width: 28
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 21692b86f043d1470800000000000000
-      internalID: 8366900923509937682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_3
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 1282
-        width: 36
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84160ee1ed43c2980800000000000000
-      internalID: -8562410662932750008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_4
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 1282
-        width: 50
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8b4d1113674849de0800000000000000
-      internalID: -1327290347003194184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_5
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 1282
-        width: 48
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3da70d8d8f80e06a0800000000000000
-      internalID: -6481232948857111853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_6
-      rect:
-        serializedVersion: 2
-        x: 398
-        y: 1282
-        width: 36
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43093b05100bb50f0800000000000000
-      internalID: -1127113762030776268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_7
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 1218
-        width: 20
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f11fe922eaa8d4e90800000000000000
-      internalID: -7039818162000432865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_8
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 1218
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f60361ee9591648d0800000000000000
-      internalID: -2862572639110156177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_9
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 1218
-        width: 21
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85f8c80dd7c14a6b0800000000000000
-      internalID: -5286068735930757288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_10
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 1218
-        width: 26
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46c63829a315755c0800000000000000
-      internalID: -4226820413255881628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_11
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 1218
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0aa8e29c12857370800000000000000
-      internalID: 8319698945872275980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_12
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 1218
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 89a8f61041ddbdfe0800000000000000
-      internalID: -1163093000751969640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_13
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 1218
-        width: 28
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4709f572f54d6050800000000000000
-      internalID: 5795365203159353167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_14
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 1154
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3153768f10ea766c0800000000000000
-      internalID: -4150157208112909037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_15
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 1154
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13fb63dd83de1efc0800000000000000
-      internalID: -3467229409613267151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_16
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 1154
-        width: 28
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72167807f503cf5e0800000000000000
-      internalID: -1874570158425022169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_17
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 1154
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b678ff729a0d62b0800000000000000
-      internalID: -5589799938168424779
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_18
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 1154
-        width: 50
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c95a6d2d17e5cd6c0800000000000000
-      internalID: -4117312116361878116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_19
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 1154
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef104ad8a73420d70800000000000000
-      internalID: 9007836398335820286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_20
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 1154
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e22fe9181bedd0a0800000000000000
-      internalID: -6855064569041181981
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_21
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 1090
-        width: 20
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a873ba4453cbc5f0800000000000000
-      internalID: -735279347346999133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_22
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 1090
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99d12db5081a95110800000000000000
-      internalID: 1250207944240405913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_23
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 1090
-        width: 21
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ad39db71fb48fc30800000000000000
-      internalID: 4393344937036955043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_24
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 1090
-        width: 26
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 14c4e21de8ad2feb0800000000000000
-      internalID: -4687443955209581503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_25
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 1090
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 547cdadc900f9f2e0800000000000000
-      internalID: -2091376627040794811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_26
-      rect:
-        serializedVersion: 2
-        x: 333
-        y: 1090
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d6eaf38c9b90e8710800000000000000
-      internalID: 1697304803098472045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_27
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 1090
-        width: 28
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd1db1f3f00e8be00800000000000000
-      internalID: 1060844068333670875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: ZombieMainEneny_28
       rect:
         serializedVersion: 2
-        x: 4
-        y: 1026
-        width: 46
-        height: 47
+        x: 0
+        y: 1024
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1249,10 +661,10 @@ TextureImporter:
       name: ZombieMainEneny_29
       rect:
         serializedVersion: 2
-        x: 67
+        x: 64
         y: 1024
-        width: 43
-        height: 48
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1270,10 +682,10 @@ TextureImporter:
       name: ZombieMainEneny_30
       rect:
         serializedVersion: 2
-        x: 137
+        x: 128
         y: 1024
-        width: 36
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1291,10 +703,10 @@ TextureImporter:
       name: ZombieMainEneny_31
       rect:
         serializedVersion: 2
-        x: 214
+        x: 192
         y: 1024
-        width: 24
-        height: 54
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1312,10 +724,10 @@ TextureImporter:
       name: ZombieMainEneny_32
       rect:
         serializedVersion: 2
-        x: 279
+        x: 256
         y: 1024
-        width: 23
-        height: 59
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1333,9 +745,9 @@ TextureImporter:
       name: ZombieMainEneny_33
       rect:
         serializedVersion: 2
-        x: 343
+        x: 320
         y: 1024
-        width: 23
+        width: 64
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1354,10 +766,10 @@ TextureImporter:
       name: ZombieMainEneny_34
       rect:
         serializedVersion: 2
-        x: 407
+        x: 384
         y: 1024
-        width: 23
-        height: 59
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1375,10 +787,10 @@ TextureImporter:
       name: ZombieMainEneny_35
       rect:
         serializedVersion: 2
-        x: 470
+        x: 448
         y: 1024
-        width: 24
-        height: 54
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1396,10 +808,10 @@ TextureImporter:
       name: ZombieMainEneny_36
       rect:
         serializedVersion: 2
-        x: 11
-        y: 962
-        width: 43
-        height: 48
+        x: 0
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1417,10 +829,10 @@ TextureImporter:
       name: ZombieMainEneny_37
       rect:
         serializedVersion: 2
-        x: 70
-        y: 962
-        width: 46
-        height: 48
+        x: 64
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1438,10 +850,10 @@ TextureImporter:
       name: ZombieMainEneny_38
       rect:
         serializedVersion: 2
-        x: 134
-        y: 962
-        width: 46
-        height: 48
+        x: 128
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1459,10 +871,10 @@ TextureImporter:
       name: ZombieMainEneny_39
       rect:
         serializedVersion: 2
-        x: 201
-        y: 962
-        width: 46
-        height: 48
+        x: 192
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1480,10 +892,10 @@ TextureImporter:
       name: ZombieMainEneny_40
       rect:
         serializedVersion: 2
-        x: 259
-        y: 962
-        width: 46
-        height: 48
+        x: 256
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1502,9 +914,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 962
-        width: 46
-        height: 48
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1522,10 +934,10 @@ TextureImporter:
       name: ZombieMainEneny_42
       rect:
         serializedVersion: 2
-        x: 387
-        y: 962
-        width: 46
-        height: 48
+        x: 384
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1543,10 +955,10 @@ TextureImporter:
       name: ZombieMainEneny_43
       rect:
         serializedVersion: 2
-        x: 457
-        y: 962
-        width: 46
-        height: 48
+        x: 448
+        y: 960
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1564,10 +976,10 @@ TextureImporter:
       name: ZombieMainEneny_44
       rect:
         serializedVersion: 2
-        x: 12
-        y: 898
-        width: 46
-        height: 48
+        x: 0
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1585,10 +997,10 @@ TextureImporter:
       name: ZombieMainEneny_45
       rect:
         serializedVersion: 2
-        x: 80
-        y: 899
-        width: 43
-        height: 47
+        x: 64
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1606,10 +1018,10 @@ TextureImporter:
       name: ZombieMainEneny_46
       rect:
         serializedVersion: 2
-        x: 139
+        x: 128
         y: 896
-        width: 36
-        height: 50
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1627,10 +1039,10 @@ TextureImporter:
       name: ZombieMainEneny_47
       rect:
         serializedVersion: 2
-        x: 210
-        y: 899
-        width: 25
-        height: 47
+        x: 192
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1648,10 +1060,10 @@ TextureImporter:
       name: ZombieMainEneny_48
       rect:
         serializedVersion: 2
-        x: 277
-        y: 898
-        width: 22
-        height: 47
+        x: 256
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1669,10 +1081,10 @@ TextureImporter:
       name: ZombieMainEneny_49
       rect:
         serializedVersion: 2
-        x: 341
+        x: 320
         y: 896
-        width: 22
-        height: 49
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1690,10 +1102,10 @@ TextureImporter:
       name: ZombieMainEneny_50
       rect:
         serializedVersion: 2
-        x: 405
-        y: 898
-        width: 22
-        height: 47
+        x: 384
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1711,10 +1123,10 @@ TextureImporter:
       name: ZombieMainEneny_51
       rect:
         serializedVersion: 2
-        x: 466
-        y: 899
-        width: 25
-        height: 47
+        x: 448
+        y: 896
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1732,10 +1144,10 @@ TextureImporter:
       name: ZombieMainEneny_52
       rect:
         serializedVersion: 2
-        x: 10
-        y: 834
-        width: 43
-        height: 48
+        x: 0
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1753,10 +1165,10 @@ TextureImporter:
       name: ZombieMainEneny_53
       rect:
         serializedVersion: 2
-        x: 76
-        y: 834
-        width: 46
-        height: 48
+        x: 64
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1774,10 +1186,10 @@ TextureImporter:
       name: ZombieMainEneny_54
       rect:
         serializedVersion: 2
-        x: 140
-        y: 834
-        width: 46
-        height: 48
+        x: 128
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1795,10 +1207,10 @@ TextureImporter:
       name: ZombieMainEneny_55
       rect:
         serializedVersion: 2
-        x: 201
-        y: 834
-        width: 46
-        height: 48
+        x: 192
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1816,10 +1228,10 @@ TextureImporter:
       name: ZombieMainEneny_56
       rect:
         serializedVersion: 2
-        x: 271
-        y: 834
-        width: 46
-        height: 48
+        x: 256
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1837,10 +1249,10 @@ TextureImporter:
       name: ZombieMainEneny_57
       rect:
         serializedVersion: 2
-        x: 338
-        y: 834
-        width: 46
-        height: 48
+        x: 320
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1858,10 +1270,10 @@ TextureImporter:
       name: ZombieMainEneny_58
       rect:
         serializedVersion: 2
-        x: 399
-        y: 834
-        width: 46
-        height: 48
+        x: 384
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1879,10 +1291,10 @@ TextureImporter:
       name: ZombieMainEneny_59
       rect:
         serializedVersion: 2
-        x: 457
-        y: 834
-        width: 46
-        height: 48
+        x: 448
+        y: 832
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1900,10 +1312,10 @@ TextureImporter:
       name: ZombieMainEneny_60
       rect:
         serializedVersion: 2
-        x: 15
-        y: 771
-        width: 43
-        height: 47
+        x: 0
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1921,10 +1333,10 @@ TextureImporter:
       name: ZombieMainEneny_61
       rect:
         serializedVersion: 2
-        x: 79
-        y: 771
-        width: 43
-        height: 47
+        x: 64
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1942,10 +1354,10 @@ TextureImporter:
       name: ZombieMainEneny_62
       rect:
         serializedVersion: 2
-        x: 143
-        y: 770
-        width: 43
-        height: 48
+        x: 128
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1963,10 +1375,10 @@ TextureImporter:
       name: ZombieMainEneny_63
       rect:
         serializedVersion: 2
-        x: 206
-        y: 769
-        width: 43
-        height: 48
+        x: 192
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1984,10 +1396,10 @@ TextureImporter:
       name: ZombieMainEneny_64
       rect:
         serializedVersion: 2
-        x: 271
-        y: 770
-        width: 43
-        height: 48
+        x: 256
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2005,10 +1417,10 @@ TextureImporter:
       name: ZombieMainEneny_65
       rect:
         serializedVersion: 2
-        x: 335
-        y: 771
-        width: 43
-        height: 47
+        x: 320
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2026,10 +1438,10 @@ TextureImporter:
       name: ZombieMainEneny_66
       rect:
         serializedVersion: 2
-        x: 399
-        y: 770
-        width: 43
-        height: 48
+        x: 384
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2047,10 +1459,10 @@ TextureImporter:
       name: ZombieMainEneny_67
       rect:
         serializedVersion: 2
-        x: 463
-        y: 769
-        width: 43
-        height: 48
+        x: 448
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2068,10 +1480,10 @@ TextureImporter:
       name: ZombieMainEneny_68
       rect:
         serializedVersion: 2
-        x: 527
-        y: 770
-        width: 43
-        height: 48
+        x: 512
+        y: 768
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2089,10 +1501,10 @@ TextureImporter:
       name: ZombieMainEneny_69
       rect:
         serializedVersion: 2
-        x: 11
-        y: 706
-        width: 43
-        height: 48
+        x: 0
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2110,10 +1522,10 @@ TextureImporter:
       name: ZombieMainEneny_70
       rect:
         serializedVersion: 2
-        x: 70
-        y: 706
-        width: 42
-        height: 47
+        x: 64
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2131,10 +1543,10 @@ TextureImporter:
       name: ZombieMainEneny_71
       rect:
         serializedVersion: 2
-        x: 137
-        y: 707
-        width: 43
-        height: 47
+        x: 128
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2152,10 +1564,10 @@ TextureImporter:
       name: ZombieMainEneny_72
       rect:
         serializedVersion: 2
-        x: 207
-        y: 707
-        width: 46
-        height: 47
+        x: 192
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2173,10 +1585,10 @@ TextureImporter:
       name: ZombieMainEneny_73
       rect:
         serializedVersion: 2
-        x: 269
-        y: 706
-        width: 45
-        height: 48
+        x: 256
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2194,10 +1606,10 @@ TextureImporter:
       name: ZombieMainEneny_74
       rect:
         serializedVersion: 2
-        x: 335
-        y: 706
-        width: 45
-        height: 47
+        x: 320
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2215,10 +1627,10 @@ TextureImporter:
       name: ZombieMainEneny_75
       rect:
         serializedVersion: 2
-        x: 400
-        y: 706
-        width: 46
-        height: 48
+        x: 384
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2236,10 +1648,10 @@ TextureImporter:
       name: ZombieMainEneny_76
       rect:
         serializedVersion: 2
-        x: 460
-        y: 706
-        width: 43
-        height: 48
+        x: 448
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2257,10 +1669,10 @@ TextureImporter:
       name: ZombieMainEneny_77
       rect:
         serializedVersion: 2
-        x: 522
-        y: 706
-        width: 42
-        height: 48
+        x: 512
+        y: 704
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2279,9 +1691,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 642
-        width: 47
-        height: 48
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2300,9 +1712,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 642
-        width: 47
-        height: 48
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2321,9 +1733,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 641
-        width: 47
-        height: 49
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2341,10 +1753,10 @@ TextureImporter:
       name: ZombieMainEneny_81
       rect:
         serializedVersion: 2
-        x: 193
-        y: 641
-        width: 46
-        height: 48
+        x: 192
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2363,9 +1775,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 641
-        width: 47
-        height: 49
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2384,9 +1796,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 320
-        y: 642
-        width: 47
-        height: 48
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2405,9 +1817,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 384
-        y: 641
-        width: 47
-        height: 49
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2426,9 +1838,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 448
-        y: 641
-        width: 46
-        height: 48
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2447,9 +1859,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 641
-        width: 47
-        height: 49
+        y: 640
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2467,10 +1879,10 @@ TextureImporter:
       name: ZombieMainEneny_87
       rect:
         serializedVersion: 2
-        x: 10
-        y: 578
-        width: 43
-        height: 48
+        x: 0
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2488,10 +1900,10 @@ TextureImporter:
       name: ZombieMainEneny_88
       rect:
         serializedVersion: 2
-        x: 80
-        y: 578
-        width: 42
-        height: 47
+        x: 64
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2509,10 +1921,10 @@ TextureImporter:
       name: ZombieMainEneny_89
       rect:
         serializedVersion: 2
-        x: 140
-        y: 579
-        width: 43
-        height: 47
+        x: 128
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2530,10 +1942,10 @@ TextureImporter:
       name: ZombieMainEneny_90
       rect:
         serializedVersion: 2
-        x: 195
-        y: 579
-        width: 46
-        height: 47
+        x: 192
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2551,10 +1963,10 @@ TextureImporter:
       name: ZombieMainEneny_91
       rect:
         serializedVersion: 2
-        x: 262
-        y: 578
-        width: 45
-        height: 48
+        x: 256
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2572,10 +1984,10 @@ TextureImporter:
       name: ZombieMainEneny_92
       rect:
         serializedVersion: 2
-        x: 324
-        y: 578
-        width: 45
-        height: 47
+        x: 320
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2593,10 +2005,10 @@ TextureImporter:
       name: ZombieMainEneny_93
       rect:
         serializedVersion: 2
-        x: 386
-        y: 578
-        width: 46
-        height: 48
+        x: 384
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2614,10 +2026,10 @@ TextureImporter:
       name: ZombieMainEneny_94
       rect:
         serializedVersion: 2
-        x: 457
-        y: 578
-        width: 43
-        height: 48
+        x: 448
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2635,10 +2047,10 @@ TextureImporter:
       name: ZombieMainEneny_95
       rect:
         serializedVersion: 2
-        x: 524
-        y: 578
-        width: 42
-        height: 48
+        x: 512
+        y: 576
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2653,1609 +2065,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ZombieMainEneny_96
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 514
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d1dfc22ca7995c20800000000000000
-      internalID: 3195752176170291666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_97
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 513
-        width: 26
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e5c8412e74051f90800000000000000
-      internalID: -6983670707397278239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_98
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 513
-        width: 25
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b3dc472a41ccdfc0800000000000000
-      internalID: -3468685088751037519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_99
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 513
-        width: 27
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d0e71c0e76b8c800800000000000000
-      internalID: 632956400130580688
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_100
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 513
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ed2e31ce06fbb6b0800000000000000
-      internalID: -5279355594929721885
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_101
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 513
-        width: 39
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 143613f60f364d9e0800000000000000
-      internalID: -1597542083500874943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_102
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 450
-        width: 20
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30c5b061336e66b00800000000000000
-      internalID: 821597089129257987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_103
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 450
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6963138f643f870b0800000000000000
-      internalID: -5730563039691721066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_104
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 450
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee652d6d6567568f0800000000000000
-      internalID: -547901664312273170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_105
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 450
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfd42bd7dda49eee0800000000000000
-      internalID: -1231370707952054788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_106
-      rect:
-        serializedVersion: 2
-        x: 264
-        y: 450
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46ba4c8ba9e525230800000000000000
-      internalID: 3626064668604541796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_107
-      rect:
-        serializedVersion: 2
-        x: 331
-        y: 450
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac3bba7bfcfaefe20800000000000000
-      internalID: 3386337276503765962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_108
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 386
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ab6a61e4fa43b440800000000000000
-      internalID: 4950382831024630694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_109
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 386
-        width: 26
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95040fb97727d9470800000000000000
-      internalID: 8402998337786101849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_110
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 386
-        width: 26
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d705a628f0444130800000000000000
-      internalID: 3550033840819210201
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_111
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 386
-        width: 26
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3798bcbcf663e76d0800000000000000
-      internalID: -2990893248739047053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_112
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 386
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0e908e11c6fbc0f0800000000000000
-      internalID: -1095510775033717237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_113
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 386
-        width: 39
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 730a467710deb1e40800000000000000
-      internalID: 5628352749883400247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_114
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 322
-        width: 20
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d5bcb5d6bed83540800000000000000
-      internalID: 4987981464164152788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_115
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 322
-        width: 25
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c92b059ec3e3bd870800000000000000
-      internalID: 8708622735784325788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_116
-      rect:
-        serializedVersion: 2
-        x: 148
-        y: 322
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97135b4b266f8e070800000000000000
-      internalID: 8136023630643802489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_117
-      rect:
-        serializedVersion: 2
-        x: 211
-        y: 322
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 822c8433a64399c60800000000000000
-      internalID: 7825343458264531496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_118
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 322
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d070788bbe64c0050800000000000000
-      internalID: 5768063200981878541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_119
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 322
-        width: 33
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 18ccbb376e7a6b480800000000000000
-      internalID: -8883728606715720575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_120
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 258
-        width: 30
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed90dbd3599bd9090800000000000000
-      internalID: -8026054910267291170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_121
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 256
-        width: 26
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b10cbd4391ee9cd40800000000000000
-      internalID: 5605273003267702811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_122
-      rect:
-        serializedVersion: 2
-        x: 149
-        y: 256
-        width: 22
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f90a1b0153be1c10800000000000000
-      internalID: 2026254043023280624
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_123
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 256
-        width: 22
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59ad94a9fba517da0800000000000000
-      internalID: -5948873853805929835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_124
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 256
-        width: 27
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4fdca38fa1dd32d0800000000000000
-      internalID: -3297248800406708404
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_125
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 256
-        width: 25
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85e0d08fce2e606b0800000000000000
-      internalID: -5330323601544638888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_126
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 256
-        width: 26
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 414dd7002eb628f60800000000000000
-      internalID: 8035103303597413396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_127
-      rect:
-        serializedVersion: 2
-        x: 468
-        y: 256
-        width: 27
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d3b354d4d769e190800000000000000
-      internalID: -7932695104843435048
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_128
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 256
-        width: 28
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 421096e4ea4d2ee80800000000000000
-      internalID: -8150718530482274012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_129
-      rect:
-        serializedVersion: 2
-        x: 596
-        y: 256
-        width: 27
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1767836bfe1ef4070800000000000000
-      internalID: 8092935475078657649
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_130
-      rect:
-        serializedVersion: 2
-        x: 660
-        y: 256
-        width: 22
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7691f10659d02100800000000000000
-      internalID: 81303756715693691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_131
-      rect:
-        serializedVersion: 2
-        x: 724
-        y: 256
-        width: 22
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e1eb31ac4bdd7aa0800000000000000
-      internalID: -6161527593003916832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_132
-      rect:
-        serializedVersion: 2
-        x: 788
-        y: 256
-        width: 22
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1c651c0065c4bf40800000000000000
-      internalID: 5743432441114487835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_133
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 194
-        width: 20
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 157b5e7eb4ee49ff0800000000000000
-      internalID: -30137287704201391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_134
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 194
-        width: 25
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 58cb196c2263301b0800000000000000
-      internalID: -5691645981077947259
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_135
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 194
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9e0c9acb3938b530800000000000000
-      internalID: 3870906808690019996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_136
-      rect:
-        serializedVersion: 2
-        x: 205
-        y: 194
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70d0f624f108c3310800000000000000
-      internalID: 1386123657070185735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_137
-      rect:
-        serializedVersion: 2
-        x: 269
-        y: 194
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff0a9cd6593a54cc0800000000000000
-      internalID: -3727393254391832321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_138
-      rect:
-        serializedVersion: 2
-        x: 332
-        y: 194
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed76f2e79d8a84000800000000000000
-      internalID: 20451850401572830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_139
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 194
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e0415bede221a190800000000000000
-      internalID: -7953037061709020956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_140
-      rect:
-        serializedVersion: 2
-        x: 461
-        y: 194
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f0f6a17f065449d40800000000000000
-      internalID: 5590169320238509839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_141
-      rect:
-        serializedVersion: 2
-        x: 525
-        y: 194
-        width: 38
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 833c3b450854ac220800000000000000
-      internalID: 2506892560064299832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_142
-      rect:
-        serializedVersion: 2
-        x: 589
-        y: 194
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6296376e0fffe0b0800000000000000
-      internalID: -5697054566274133397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_143
-      rect:
-        serializedVersion: 2
-        x: 653
-        y: 194
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b93964fa2bdda5800800000000000000
-      internalID: 602037259721937819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_144
-      rect:
-        serializedVersion: 2
-        x: 717
-        y: 194
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a1f28b68f05c2410800000000000000
-      internalID: 1453625807619682721
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_145
-      rect:
-        serializedVersion: 2
-        x: 781
-        y: 194
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ca6f6c9215f2e2e0800000000000000
-      internalID: -2097845016118465856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_146
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 130
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d67e252f83a0c2790800000000000000
-      internalID: -7553651235307198611
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_147
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 131
-        width: 25
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83ee0946fd10bf4b0800000000000000
-      internalID: -5405724868751593928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_148
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 131
-        width: 24
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dd6fdad220696450800000000000000
-      internalID: 6082498474557795794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_149
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 130
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 366fa1baaf5cfaca0800000000000000
-      internalID: -6003362097858415005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_150
-      rect:
-        serializedVersion: 2
-        x: 275
-        y: 130
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db7f8815fc0d5fb00800000000000000
-      internalID: 861824492556056509
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_151
-      rect:
-        serializedVersion: 2
-        x: 339
-        y: 130
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 402d836aa0a1126b0800000000000000
-      internalID: -5322944651534478844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_152
-      rect:
-        serializedVersion: 2
-        x: 403
-        y: 130
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e87aae6d6dca268e0800000000000000
-      internalID: -1701607670463944818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_153
-      rect:
-        serializedVersion: 2
-        x: 466
-        y: 130
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 036153e7cabd9da50800000000000000
-      internalID: 6546505067257992752
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_154
-      rect:
-        serializedVersion: 2
-        x: 530
-        y: 130
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2aec10ef85f4e55f0800000000000000
-      internalID: -766087642969157982
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_155
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 130
-        width: 23
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c17cc98e6dea2150800000000000000
-      internalID: 5848748125108072897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_156
-      rect:
-        serializedVersion: 2
-        x: 658
-        y: 130
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c021e373cfd6a2b0800000000000000
-      internalID: -5573521458268659515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_157
-      rect:
-        serializedVersion: 2
-        x: 724
-        y: 130
-        width: 22
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffa0ff4818f2a8910800000000000000
-      internalID: 1840335631062862591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_158
-      rect:
-        serializedVersion: 2
-        x: 786
-        y: 130
-        width: 24
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 026d18a74b502c730800000000000000
-      internalID: 4017780090275485216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_159
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 66
-        width: 20
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 161618a5884b09250800000000000000
-      internalID: 5949453605483405665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_160
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 66
-        width: 25
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e44e46f94807b720800000000000000
-      internalID: 2861765201975198945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_161
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 66
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3711f11ea63a15ba0800000000000000
-      internalID: -6101916340671540877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_162
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 66
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 19f3c9eea3496d990800000000000000
-      internalID: -7361533560058265711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_163
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 66
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3510cf81e4ce00050800000000000000
-      internalID: 5764867343205007699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_164
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 66
-        width: 32
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b0e879c9d01f8c60800000000000000
-      internalID: 7822489605339930809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_165
-      rect:
-        serializedVersion: 2
-        x: 402
-        y: 66
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aca27c09bdc9fa3c0800000000000000
-      internalID: -4346082648548496694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_166
-      rect:
-        serializedVersion: 2
-        x: 463
-        y: 66
-        width: 36
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69e00ef1a6ab15b70800000000000000
-      internalID: 8886088504742776470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_167
-      rect:
-        serializedVersion: 2
-        x: 525
-        y: 66
-        width: 38
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1fc9e6cff0a0c0d0800000000000000
-      internalID: -3404544297877778662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_168
-      rect:
-        serializedVersion: 2
-        x: 592
-        y: 66
-        width: 35
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5596439b6116a9af0800000000000000
-      internalID: -388891667589732011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_169
-      rect:
-        serializedVersion: 2
-        x: 657
-        y: 66
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1f8e4ca2820f29e0800000000000000
-      internalID: -1644092578707108070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_170
-      rect:
-        serializedVersion: 2
-        x: 725
-        y: 66
-        width: 30
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f41a2c1331a552740800000000000000
-      internalID: 5126602789316895055
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ZombieMainEneny_171
-      rect:
-        serializedVersion: 2
-        x: 785
-        y: 66
-        width: 34
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eedd12c6e83c5b590800000000000000
-      internalID: -7659000574806729234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: ZombieMainEneny_172
       rect:
         serializedVersion: 2
-        x: 17
-        y: 2
-        width: 30
-        height: 48
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4273,10 +2089,10 @@ TextureImporter:
       name: ZombieMainEneny_173
       rect:
         serializedVersion: 2
-        x: 82
-        y: 2
-        width: 31
-        height: 47
+        x: 64
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4294,10 +2110,10 @@ TextureImporter:
       name: ZombieMainEneny_174
       rect:
         serializedVersion: 2
-        x: 147
-        y: 2
-        width: 30
-        height: 40
+        x: 128
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4315,10 +2131,10 @@ TextureImporter:
       name: ZombieMainEneny_175
       rect:
         serializedVersion: 2
-        x: 211
-        y: 3
-        width: 30
-        height: 35
+        x: 192
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4336,10 +2152,10 @@ TextureImporter:
       name: ZombieMainEneny_176
       rect:
         serializedVersion: 2
-        x: 275
-        y: 3
-        width: 31
-        height: 28
+        x: 256
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4357,10 +2173,10 @@ TextureImporter:
       name: ZombieMainEneny_177
       rect:
         serializedVersion: 2
-        x: 338
-        y: 1
-        width: 34
-        height: 35
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
