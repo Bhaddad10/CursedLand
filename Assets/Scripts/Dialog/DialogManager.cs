@@ -82,7 +82,7 @@ public class DialogManager : MonoBehaviour
             ((MerchantNpcController) npc).actionAfterDialog();
             npc = null;
         }
-        Debug.Log("End of conversation.");
+        //Debug.Log("End of conversation.");
     }
 
     public bool IsDialogActive()

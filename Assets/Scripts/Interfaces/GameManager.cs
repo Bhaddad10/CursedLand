@@ -47,7 +47,6 @@ public class GameManager : IPersistentSingleton<GameManager>
 
     internal void ChangeToPreviousScene()
     {
-        Debug.Log(_previousScene);
         LoadScene(_previousScene);
     }
 }

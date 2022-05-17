@@ -28,14 +28,26 @@ public class PlayerState
             items.Add(item.name, new Potion(1));
         }
 
-        return true;
+        printCurrentInventory();
 
-        // Print inventory
-        /*foreach (var x in items)
+        return true;
+    }
+
+    // Print inventory
+    public void printCurrentInventory()
+    {
+        if (items.Count == 0)
+        {
+            Debug.Log("Inventário vazio.");
+            return;
+        }
+
+        foreach (var x in items)
         {
             Debug.Log(x.Key + " - " + x.Value.quantity);
-        }*/
+        }
     }
+        
 
     /*public Text liveText;
     public Scrollbar healthSlider;
