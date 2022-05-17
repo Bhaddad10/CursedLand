@@ -21,8 +21,9 @@ public class Projectile : MonoBehaviour
     {
         GameObject effect = Instantiate(inpactEffectPrefab, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
-        EnemyController enemy =collision.GetComponent<EnemyController>();
         Destroy(gameObject);
+        EnemyController enemy = collision.GetComponent<EnemyController>();
+       
         if (enemy != null)
         {
             enemy.takeDamage(damage);

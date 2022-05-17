@@ -114,9 +114,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 20
-  m_AngularDrag: 0.05
+  m_Mass: 500
+  m_LinearDrag: 0
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -139,8 +139,9 @@ MonoBehaviour:
   speed: 3
   followRange: 5
   maxRange: 1
-  attackRange: 1.5
-  cooldown: 1
+  attackRange: 1
+  cooldown: 1.5
+  damage: 30
 --- !u!95 &4774688919095034541
 Animator:
   serializedVersion: 3
