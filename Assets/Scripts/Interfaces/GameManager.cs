@@ -13,6 +13,8 @@ public class GameManager : IPersistentSingleton<GameManager>
     private string _previousScene;
 
     public PlayerState playerState;
+    public UIManager uiManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,10 +45,17 @@ public class GameManager : IPersistentSingleton<GameManager>
     private void OnSceneLoaded(AsyncOperation asyncOperation)
     {
         OnLoadedSceneComplete?.Invoke(_currentScene);
+
+
+        //GameObject Hud = 
+        if(_currentScene == "Main")
+            uiManager.potionsTray = GameObject.Find("Potions");
+            //uiManager.UpdateInventory();
     }
 
     internal void ChangeToPreviousScene()
     {
         LoadScene(_previousScene);
+        //GameManager.Instance.uiManager.potionsTray = GameObject.Find("Potions").GetComponent<GameObject>(); ;
     }
 }

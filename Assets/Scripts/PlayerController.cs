@@ -209,12 +209,14 @@ public class PlayerController : MonoBehaviour
                 value.Consume();
                 GameManager.Instance.playerState.items.Remove(key);
                 GameManager.Instance.playerState.printCurrentInventory();
+                GameManager.Instance.uiManager.UpdateInventory();
                 return;
             }
 
             value.Consume();
             value.quantity -= 1;
             GameManager.Instance.playerState.printCurrentInventory();
+            GameManager.Instance.uiManager.UpdateInventory();
         }
     }
 
