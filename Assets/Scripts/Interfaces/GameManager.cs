@@ -19,7 +19,7 @@ public class GameManager : IPersistentSingleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
-        
+        uiManager.UpdateInventory();
     }
 
     // Update is called once per frame
@@ -48,9 +48,11 @@ public class GameManager : IPersistentSingleton<GameManager>
 
 
         //GameObject Hud = 
-        if(_currentScene == "Main")
+        if (_currentScene == "Main")
+        {
             uiManager.potionsTray = GameObject.Find("Potions");
-            //uiManager.UpdateInventory();
+            uiManager.UpdateInventory();
+        }
     }
 
     internal void ChangeToPreviousScene()

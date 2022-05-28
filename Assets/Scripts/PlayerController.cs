@@ -197,7 +197,7 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Pressed " + (pressedKey + 1));
             if (GameManager.Instance.playerState.items.Count == 0)
             {
-                Debug.Log("No more potions, wut are u trynna do brother?");
+                Debug.Log("No more potions");
                 return;
             }
             KeyValuePair<string, Potion> keyValuePair = GameManager.Instance.playerState.items.ElementAt(pressedKey);
@@ -208,14 +208,14 @@ public class PlayerController : MonoBehaviour
             {
                 value.Consume();
                 GameManager.Instance.playerState.items.Remove(key);
-                GameManager.Instance.playerState.printCurrentInventory();
+                //GameManager.Instance.playerState.printCurrentInventory();
                 GameManager.Instance.uiManager.UpdateInventory();
                 return;
             }
 
             value.Consume();
             value.quantity -= 1;
-            GameManager.Instance.playerState.printCurrentInventory();
+            //GameManager.Instance.playerState.printCurrentInventory();
             GameManager.Instance.uiManager.UpdateInventory();
         }
     }

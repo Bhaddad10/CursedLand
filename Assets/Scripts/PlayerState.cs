@@ -28,8 +28,6 @@ public class PlayerState
             items.Add(item.name, new Potion(1));
         }
 
-        printCurrentInventory();
-
         return true;
     }
 
