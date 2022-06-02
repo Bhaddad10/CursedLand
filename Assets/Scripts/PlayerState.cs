@@ -25,7 +25,7 @@ public class PlayerState
         }
         else
         {
-            items.Add(item.name, new Potion(1));
+            items.Add(item.name, new Potion(1, item.sprite));
         }
 
         return true;

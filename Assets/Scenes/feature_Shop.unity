@@ -1540,3 +1540,4 @@ MonoBehaviour:
     price: 10
     gameObject: {fileID: 693957748}
     button: {fileID: 693957753}
+    sprite: small Potions

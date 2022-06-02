@@ -10,5 +10,6 @@ public class ShopItem
     public int price;
     public GameObject gameObject;
     public Button button;
+    public string sprite;
 
 }
