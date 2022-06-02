@@ -19,6 +19,7 @@ public class GameManager : IPersistentSingleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
         uiManager.UpdateInventory();
     }
 

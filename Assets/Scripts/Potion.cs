@@ -7,10 +7,12 @@ public class Potion
 {
     public int quantity;
     public int healthToRestore = 50;
+    public string sprite;
 
-    public Potion(int quantity)
+    public Potion(int quantity, string sprite)
     {
         this.quantity = quantity;
+        this.sprite = sprite;
     }
 
     internal void Consume()
