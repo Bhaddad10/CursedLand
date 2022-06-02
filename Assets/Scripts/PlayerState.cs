@@ -29,13 +29,23 @@ public class PlayerState
         }
 
         return true;
+    }
 
-        // Print inventory
-        /*foreach (var x in items)
+    // Print inventory
+    public void printCurrentInventory()
+    {
+        if (items.Count == 0)
+        {
+            Debug.Log("Inventário vazio.");
+            return;
+        }
+
+        foreach (var x in items)
         {
             Debug.Log(x.Key + " - " + x.Value.quantity);
-        }*/
+        }
     }
+        
 
     /*public Text liveText;
     public Scrollbar healthSlider;

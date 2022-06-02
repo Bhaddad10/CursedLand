@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -56,22 +57,25 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (DialogManager.Instance != null)
+        if (DialogManager.Instance == null)
         {
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
+        takePotion();
         talkToNpc();
         _movement = Vector2.zero;
 
         // If scene doesn't contain DialogManager
         //      or, if it does, and it's not on dialog
-        if (DialogManager.Instance == null || (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
+        if (DialogManager.Instance == null || 
+            (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
         {
             move();
             attack();
@@ -183,5 +187,49 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    void takePotion()
+    {
+        int pressedKey = ConsumePotionKeyPressed();
+        if (pressedKey != -1)
+        {
+            //Debug.Log("Pressed " + (pressedKey + 1));
+            if (GameManager.Instance.playerState.items.Count == 0)
+            {
+                Debug.Log("No more potions");
+                return;
+            }
+            KeyValuePair<string, Potion> keyValuePair = GameManager.Instance.playerState.items.ElementAt(pressedKey);
+            string key = keyValuePair.Key;
+            Potion value = keyValuePair.Value;
+
+            if (value.quantity <= 1)
+            {
+                value.Consume();
+                GameManager.Instance.playerState.items.Remove(key);
+                //GameManager.Instance.playerState.printCurrentInventory();
+                GameManager.Instance.uiManager.UpdateInventory();
+                return;
+            }
+
+            value.Consume();
+            value.quantity -= 1;
+            //GameManager.Instance.playerState.printCurrentInventory();
+            GameManager.Instance.uiManager.UpdateInventory();
+        }
+    }
+
+    int ConsumePotionKeyPressed()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            return 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            return 1;
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            return 2;
+
+        return -1;
+
     }
 }
