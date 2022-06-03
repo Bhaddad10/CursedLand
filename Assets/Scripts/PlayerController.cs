@@ -10,10 +10,6 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [Space]
-    //Velocidade do personagem
-    public int hp = 150;
-    public float speed = 10.0f;
-    public bool isDead = false;
 
     //Variaveis para definir um intervalo de ataque
     public float cooldown = 1.5f;
@@ -86,7 +82,7 @@ public class PlayerController : MonoBehaviour
     // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
     private void FixedUpdate()
     {
-        Vector2 _velocity = _movement.normalized * speed;
+        Vector2 _velocity = _movement.normalized * GameManager.Instance.playerState.speed;
         _rigidbody.velocity = _velocity;
         
     }
@@ -96,7 +92,8 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
                             //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
-        if (!isDead && !bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
+        if (!GameManager.Instance.playerState.isDead 
+            && !bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -130,7 +127,7 @@ public class PlayerController : MonoBehaviour
     void attack()
     {
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill && !isDead)
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill && !GameManager.Instance.playerState.isDead)
         {
             bIsAttacking = true;
             nextSkill = Time.time + cooldown;
@@ -158,17 +155,12 @@ public class PlayerController : MonoBehaviour
     }    
     public void takeDamage(int damage)
     {
-        hp -= damage;
         Debug.Log("JOGADOR TOMANDO DANO");
-        if (hp <= 0)
-        {
-            die();
-        }
+        GameManager.Instance.playerState.TakeHit(damage);
     }
     public void die()
     {
         _animator.SetBool("isDead", true);
-        isDead = true;
     }
     void talkToNpc()
     {

@@ -43,3 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 113e62f0abe88504ebabd8e6491dd1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerState:
+    credits: 50
+    speed: 10
+    isDead: 0
+    healthBar: {fileID: 0}
+    maxHealth: 150
+    currentHealth: 150
+  playerController: {fileID: 0}
+  uiManager:
+    potionsTray: {fileID: 0}
