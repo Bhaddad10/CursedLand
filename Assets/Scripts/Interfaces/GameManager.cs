@@ -13,6 +13,7 @@ public class GameManager : IPersistentSingleton<GameManager>
     private string _previousScene;
 
     public PlayerState playerState;
+    public PlayerController playerController;
     public UIManager uiManager;
 
 
@@ -21,6 +22,18 @@ public class GameManager : IPersistentSingleton<GameManager>
     {
         //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
         uiManager.UpdateInventory();
+        loadPlayerController();
+    }
+
+    void loadPlayerController()
+    {
+        if (playerController == null)
+        {
+            Debug.Log("Player Controller will be populated through code.");
+            playerController = FindObjectOfType<PlayerController>();
+            if (playerController == null)
+                Debug.Log("Player Controller unavailable");
+        }
     }
 
     // Update is called once per frame
@@ -54,6 +67,8 @@ public class GameManager : IPersistentSingleton<GameManager>
             uiManager.potionsTray = GameObject.Find("Potions");
             uiManager.UpdateInventory();
         }
+
+        loadPlayerController();
     }
 
     internal void ChangeToPreviousScene()

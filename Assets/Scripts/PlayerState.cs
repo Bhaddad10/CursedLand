@@ -45,43 +45,47 @@ public class PlayerState
             Debug.Log(x.Key + " - " + x.Value.quantity);
         }
     }
-        
 
-    /*public Text liveText;
-    public Scrollbar healthSlider;
-    public Image healthImage;
+
+    //public Text liveText;
+    //public Scrollbar healthSlider;
+    public Image healthBar;
     [Space]
     public int lives;
-    private int maxLives = 3;
-    public float currentHelth;
-    public float maxHelth;
+    //private int maxLives = 3;
+    public float currentHealth;
+    public float maxHealth;
 
     public void Initialize()
     {
-        lives = maxLives;
-        currentHelth = maxHelth;
+        //lives = maxLives;
+        currentHealth = maxHealth;
     }
-
+    /*
     public void OnDie()
     {
         if (lives > 0)
         {
             --lives;
             UpdateLives();
-            currentHelth = maxHelth;
+            currentHealth = maxHealth;
             UpdateHelth();
         }
         {
             Debug.Log("Game Over");
         }
+    }*/
+    public void OnDie()
+    {
+
     }
 
-    public void TakeHit()
+    public void TakeHit(int damage)
     {
-        if (currentHelth > 0)
+        if (currentHealth > 0)
         {
-            currentHelth -= 30;
-            UpdateHelth();
+            currentHealth -= damage;
+            UpdateHealth();
         }
         else
         {
@@ -89,14 +93,15 @@ public class PlayerState
         }
     }
 
+    /*
     private void UpdateLives()
     {
         liveText.text = lives.ToString() + "X";
-    }
-
-    private void UpdateHelth()
-    {
-        healthImage.fillAmount = currentHelth / maxHelth;
-        healthSlider.size = currentHelth / maxHelth;
     }*/
+
+    private void UpdateHealth()
+    {
+        healthBar.fillAmount = currentHealth / maxHealth;
+        //healthSlider.size = currentHealth / maxHealth;
+    }
 }
