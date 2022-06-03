@@ -19,8 +19,6 @@ public class Potion
     {
         //GameManager.Instance.playerState.life += 20;
         Debug.Log("Consuming potion..");
-        PlayerController player = GameObject.Find("Player").GetComponent<PlayerController>();
-        if (player)
-            player.hp += healthToRestore;
+        GameManager.Instance.playerState.restoreHp(healthToRestore);
     }
 }

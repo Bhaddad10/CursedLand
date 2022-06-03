@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -46,15 +47,16 @@ public class PlayerState
         }
     }
 
-
+    public float speed = 10.0f;
+    public bool isDead = false;
     //public Text liveText;
     //public Scrollbar healthSlider;
     public Image healthBar;
     [Space]
-    public int lives;
+    //public int lives;
     //private int maxLives = 3;
-    public float currentHealth;
-    public float maxHealth;
+    public float maxHealth = 150;
+    public float currentHealth = 150;
 
     public void Initialize()
     {
@@ -77,7 +79,8 @@ public class PlayerState
     }*/
     public void OnDie()
     {
-
+        isDead = true;
+        GameManager.Instance.playerController.die();
     }
 
     public void TakeHit(int damage)
@@ -103,5 +106,11 @@ public class PlayerState
     {
         healthBar.fillAmount = currentHealth / maxHealth;
         //healthSlider.size = currentHealth / maxHealth;
+    }
+
+    internal void restoreHp(int healthToRestore)
+    {
+        currentHealth = Math.Min(currentHealth + healthToRestore, maxHealth);
+        UpdateHealth();
     }
 }

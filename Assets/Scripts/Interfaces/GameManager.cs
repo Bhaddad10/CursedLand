@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : IPersistentSingleton<GameManager>
 {
@@ -30,9 +31,13 @@ public class GameManager : IPersistentSingleton<GameManager>
         if (playerController == null)
         {
             Debug.Log("Player Controller will be populated through code.");
-            playerController = FindObjectOfType<PlayerController>();
+            playerController = GameObject.FindObjectOfType<PlayerController>();
             if (playerController == null)
                 Debug.Log("Player Controller unavailable");
+            
+            if (_currentScene == "Main")
+                playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
+            
         }
     }
 
