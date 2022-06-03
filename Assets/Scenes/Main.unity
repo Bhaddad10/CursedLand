@@ -136,6 +136,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3976730320441278786, guid: 40903496febbd9444ad821b94d11ef6f, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 475985019}
+    - target: {fileID: 3976730320441278786, guid: 40903496febbd9444ad821b94d11ef6f, type: 3}
       propertyPath: uiManager.potionsTray
       value: 
       objectReference: {fileID: 144475794}
@@ -189,6 +193,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40903496febbd9444ad821b94d11ef6f, type: 3}
+--- !u!114 &475985019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8873273257275385033, guid: 28c2b1f45431df54bab452a1eb906a75, type: 3}
+  m_PrefabInstance: {fileID: 1585111129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca402a6d940e8a242976c936229eb13a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &667443143
 PrefabInstance:
   m_ObjectHideFlags: 0
