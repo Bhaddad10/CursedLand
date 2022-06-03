@@ -24,10 +24,12 @@ public class GameManager : IPersistentSingleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        _currentScene = firstSceneName;
         //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
         uiManager.UpdateInventory();
         loadPlayerController();
     }
+
 
     void loadPlayerController()
     {
@@ -37,11 +39,10 @@ public class GameManager : IPersistentSingleton<GameManager>
             playerController = GameObject.FindObjectOfType<PlayerController>();
             if (playerController == null)
                 Debug.Log("Player Controller unavailable");
-            
-            if (_currentScene == "Main")
-                playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
-            
         }
+
+        if (_currentScene == "Main")
+            playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
     }
 
     // Update is called once per frame
