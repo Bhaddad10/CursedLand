@@ -51,6 +51,7 @@ public class PlayerState
     public bool isDead = false;
     //public Text liveText;
     //public Scrollbar healthSlider;
+    [HideInInspector]
     public Image healthBar;
     [Space]
     //public int lives;

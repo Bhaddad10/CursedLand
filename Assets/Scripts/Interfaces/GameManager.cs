@@ -14,7 +14,10 @@ public class GameManager : IPersistentSingleton<GameManager>
     private string _previousScene;
 
     public PlayerState playerState;
+    
+    [HideInInspector]
     public PlayerController playerController;
+
     public UIManager uiManager;
 
 
