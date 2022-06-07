@@ -224,4 +224,21 @@ public class PlayerController : MonoBehaviour
         return -1;
 
     }
+
+
+    internal void stashLastPosition()
+    {
+        GameManager.Instance.playerState.stashLastPosition(transform.position);
+    }
+
+    internal void goToLastPosition()
+    {
+        if (GameManager.Instance.playerState.hasLastPosition)
+            transform.position = GameManager.Instance.playerState.lastPosition;
+    }
+
+    internal void saveLastPosition()
+    {
+        GameManager.Instance.playerState.saveLastPosition();
+    }
 }
