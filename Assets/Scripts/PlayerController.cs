@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        //playerState.Initialize();
     }
 
     private void Start()
