@@ -119,7 +119,7 @@ public void OnDie()
         liveText.text = lives.ToString() + "X";
     }*/
 
-    private void UpdateHealth()
+    public void UpdateHealth()
     {
         healthBar.fillAmount = currentHealth / maxHealth;
         //healthSlider.size = currentHealth / maxHealth;

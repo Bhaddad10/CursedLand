@@ -24,6 +24,7 @@ public class GameManager : IPersistentSingleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.playerState.Initialize();
         _currentScene = firstSceneName;
         //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
         if (_currentScene != "feature_Shop")
@@ -76,6 +77,7 @@ public class GameManager : IPersistentSingleton<GameManager>
 
 
         loadPlayerController();
+        playerState.UpdateHealth();
 
         GameObject playerCamera = GameObject.Find("PlayerCamera");
         if (_currentScene != "feature_Shop")
