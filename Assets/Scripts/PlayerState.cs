@@ -11,6 +11,11 @@ public class PlayerState
     public int credits = 50;
     public Dictionary<string, Potion> items = new Dictionary<string, Potion>();
 
+    // Player's position on the map for leaving at the same position
+    internal Vector3 lastPosition = Vector3.zero;
+    internal Vector3 lastStashPosition = Vector3.zero;
+    internal bool hasLastPosition = false;
+
     internal bool tryBuyItem(ShopItem item)
     {
         if (credits < item.price)
@@ -47,6 +52,16 @@ public class PlayerState
         }
     }
 
+    internal void saveLastPosition()
+    {
+        hasLastPosition = true;
+        lastPosition = lastStashPosition;
+    }
+    internal void stashLastPosition(Vector3 position)
+    {
+        lastStashPosition = position;
+    }
+
     public float speed = 10.0f;
     public bool isDead = false;
     //public Text liveText;
@@ -64,20 +79,21 @@ public class PlayerState
         //lives = maxLives;
         currentHealth = maxHealth;
     }
+
     /*
-    public void OnDie()
-    {
-        if (lives > 0)
-        {
-            --lives;
-            UpdateLives();
-            currentHealth = maxHealth;
-            UpdateHelth();
-        }
-        {
-            Debug.Log("Game Over");
-        }
-    }*/
+public void OnDie()
+{
+   if (lives > 0)
+   {
+       --lives;
+       UpdateLives();
+       currentHealth = maxHealth;
+       UpdateHelth();
+   }
+   {
+       Debug.Log("Game Over");
+   }
+}*/
     public void OnDie()
     {
         isDead = true;
