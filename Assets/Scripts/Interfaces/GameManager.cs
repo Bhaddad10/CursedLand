@@ -26,7 +26,9 @@ public class GameManager : IPersistentSingleton<GameManager>
     {
         _currentScene = firstSceneName;
         //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
-        uiManager.UpdateInventory();
+        if (_currentScene != "feature_Shop")
+            uiManager.potionsTray = GameObject.Find("Potions");
+            uiManager.UpdateInventory();
         loadPlayerController();
     }
 
@@ -41,7 +43,7 @@ public class GameManager : IPersistentSingleton<GameManager>
                 Debug.Log("Player Controller unavailable");
         }
 
-        if (_currentScene == "Main")
+        if (_currentScene != "feature_Shop")
             playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
     }
 
@@ -71,7 +73,7 @@ public class GameManager : IPersistentSingleton<GameManager>
 
 
         //GameObject Hud = 
-        if (_currentScene == "Main")
+        if (_currentScene != "feature_Shop")
         {
             uiManager.potionsTray = GameObject.Find("Potions");
             uiManager.UpdateInventory();
