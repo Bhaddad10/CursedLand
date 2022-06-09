@@ -14,10 +14,7 @@ public class ShopManager : MonoBehaviour
     public ShopItem[] items;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    void Start() {}
 
     private void Awake()
     {
@@ -43,7 +40,6 @@ public class ShopManager : MonoBehaviour
         buyStatusPanel.SetActive(true);
         buyStatusText.text = "-" + item.price;
         
-        //Debug.Log("Buying " + item.name);
         StartCoroutine(DelayAction(1f));
     }
 
@@ -57,7 +53,6 @@ public class ShopManager : MonoBehaviour
 
     public void exitShop()
     {
-        // Debug.Log("Exitting shop.");
         GameManager.Instance.ChangeToPreviousScene();
     }
 }
