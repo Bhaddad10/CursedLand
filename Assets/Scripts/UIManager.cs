@@ -40,4 +40,11 @@ public class UIManager
 
         }
     }
+
+    internal void updatePotionTray()
+    {
+        potionsTray = GameObject.Find("Potions");
+        UpdateInventory();
+    }
+
 }

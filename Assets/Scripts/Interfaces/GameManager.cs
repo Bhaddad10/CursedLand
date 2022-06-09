@@ -14,23 +14,24 @@ public class GameManager : IPersistentSingleton<GameManager>
     private string _currentScene;
     private string _previousScene;
 
-    public PlayerState playerState;
-    
-    //[HideInInspector]]
-    public PlayerController playerController;
 
-    public UIManager uiManager;
+    // Available on HUD
+    public PlayerState playerState;   
+    [HideInInspector]
+    public PlayerController playerController;
+    [HideInInspector]
+    public UIManager potionUiManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.playerState.Initialize();
+        playerState.Initialize();
         _currentScene = firstSceneName;
-        //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
+
         if (_currentScene != SHOP_SCENE_NAME)
-            uiManager.potionsTray = GameObject.Find("Potions");
-            uiManager.UpdateInventory();
+            potionUiManager.updatePotionTray();
+            
         loadPlayerController();
     }
 
@@ -40,22 +41,21 @@ public class GameManager : IPersistentSingleton<GameManager>
         if (playerController == null)
         {
             Debug.Log("Player Controller will be populated through code.");
-            playerController = GameObject.FindObjectOfType<PlayerController>();
+            playerController = FindObjectOfType<PlayerController>();
+
+            // Had some problems
             //DontDestroyOnLoad(playerController.gameObject);
+
             if (playerController == null)
                 Debug.Log("Player Controller unavailable");
         }
 
         if (_currentScene != SHOP_SCENE_NAME)
             playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
-            //playerState
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update() {}
 
     public void LoadScene(string sceneName)
     {
@@ -67,7 +67,6 @@ public class GameManager : IPersistentSingleton<GameManager>
             return;
         }
         _previousScene = _currentScene ?? firstSceneName;
-        //_previousScene = _currentScene ?? gameObject.scene.name;
         _currentScene = sceneName;
         asyncOperation.completed += OnSceneLoaded;
     }
@@ -81,16 +80,17 @@ public class GameManager : IPersistentSingleton<GameManager>
         playerState.UpdateHealth();
 
         GameObject playerCamera = GameObject.Find("PlayerCamera");
-        if (_currentScene != SHOP_SCENE_NAME)
-        {
-            uiManager.potionsTray = GameObject.Find("Potions");
-            uiManager.UpdateInventory();
-            playerController.goToLastPosition();
-            playerCamera?.SetActive(true);
-        } else
-        {
+
+        if (_currentScene == SHOP_SCENE_NAME) {
             playerCamera?.SetActive(false);
+            playerController.saveLastPosition();
+            return;
         }
+        
+        playerCamera?.SetActive(true);
+        potionUiManager.updatePotionTray();
+
+        playerController.goToLastPosition();
         playerController.saveLastPosition();
 
     }
@@ -98,6 +98,5 @@ public class GameManager : IPersistentSingleton<GameManager>
     internal void ChangeToPreviousScene()
     {
         LoadScene(_previousScene);
-        //GameManager.Instance.uiManager.potionsTray = GameObject.Find("Potions").GetComponent<GameObject>(); ;
     }
 }

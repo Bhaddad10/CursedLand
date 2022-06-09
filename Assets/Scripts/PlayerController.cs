@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
                     return;
                 GameManager.Instance.playerState.items.Remove(key);
                 //GameManager.Instance.playerState.printCurrentInventory();
-                GameManager.Instance.uiManager.UpdateInventory();
+                GameManager.Instance.potionUiManager.UpdateInventory();
                 return;
             }
 
@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
                 return;
             value.quantity -= 1;
             //GameManager.Instance.playerState.printCurrentInventory();
-            GameManager.Instance.uiManager.UpdateInventory();
+            GameManager.Instance.potionUiManager.UpdateInventory();
         }
     }
 
