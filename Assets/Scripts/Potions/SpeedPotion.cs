@@ -11,11 +11,11 @@ public class SpeedPotion : Potion
     {
         if (GameManager.Instance.playerState.isUsingSpeedPotion)
             return false;
-        Debug.Log("Consuming Speed Potion..");
+        //Debug.Log("Consuming Speed Potion..");
         GameManager.Instance.playerState.lastSpeed = GameManager.Instance.playerState.speed;
         GameManager.Instance.playerState.speed *= 1.4f;
         GameManager.Instance.playerState.isUsingSpeedPotion = true;
-        GameManager.Instance.StartCoroutine(ResetSpeed(5f));
+        GameManager.Instance.StartCoroutine(ResetSpeed(10f));
         return true;
     }
 

@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HealthPotion : Potion
 {
-    public HealthPotion(int quantity, Sprite sprite) : base(quantity, sprite) { }
+    public int healthToRestore = 50;
 
+    public HealthPotion(int quantity, Sprite sprite) : base(quantity, sprite) { }
     internal override bool Consume()
     {
         //Debug.Log("Consuming Health Potion..");
