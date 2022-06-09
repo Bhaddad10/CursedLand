@@ -165,13 +165,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            //Debug.Log("Pressed X.");
             var closeObjects = Physics2D.OverlapCircleAll(_rigidbody.position, 1.5f, npcLayerMask);
             foreach (Collider2D collider in closeObjects)
             {
                 if (collider.tag == "NPC")
                 {
-                    //Debug.Log("Found npc close.");
                     NpcController npcController = collider.gameObject.GetComponent<NpcController>();
                     DialogManager.Instance.StartDialog(npcController);
                     return;
@@ -188,33 +186,31 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Pressed " + (pressedKey + 1));
             if (GameManager.Instance.playerState.items.Count == 0)
             {
-                Debug.Log("No more potions");
+                //Debug.Log("No more potions");
                 return;
             }
             if (pressedKey >= GameManager.Instance.playerState.items.Count)
             {
-                Debug.Log("You don't have that Potion");
+                //Debug.Log("You don't have that Potion");
                 return;
             }
 
             KeyValuePair<string, Potion> keyValuePair = GameManager.Instance.playerState.items.ElementAt(pressedKey);
-            string key = keyValuePair.Key;
-            Potion value = keyValuePair.Value;
+            string potionName = keyValuePair.Key;
+            Potion potion = keyValuePair.Value;
 
-            if (value.quantity <= 1)
+            if (potion.quantity <= 1)
             {
-                if (!value.Consume())
+                if (!potion.Consume())
                     return;
-                GameManager.Instance.playerState.items.Remove(key);
-                //GameManager.Instance.playerState.printCurrentInventory();
+                GameManager.Instance.playerState.items.Remove(potionName);
                 GameManager.Instance.potionUiManager.UpdateInventory();
                 return;
             }
 
-            if (!value.Consume())
+            if (!potion.Consume())
                 return;
-            value.quantity -= 1;
-            //GameManager.Instance.playerState.printCurrentInventory();
+            potion.quantity -= 1;
             GameManager.Instance.potionUiManager.UpdateInventory();
         }
     }
