@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : IPersistentSingleton<GameManager>
 {
+    public const string SHOP_SCENE_NAME = "Shop";
 
     public Action<string> OnLoadedSceneComplete;
 
@@ -27,7 +28,7 @@ public class GameManager : IPersistentSingleton<GameManager>
         GameManager.Instance.playerState.Initialize();
         _currentScene = firstSceneName;
         //playerState.items.Add("Health", new Potion(5, Resources.Load<Sprite>("small Potions")));
-        if (_currentScene != "feature_Shop")
+        if (_currentScene != SHOP_SCENE_NAME)
             uiManager.potionsTray = GameObject.Find("Potions");
             uiManager.UpdateInventory();
         loadPlayerController();
@@ -45,7 +46,7 @@ public class GameManager : IPersistentSingleton<GameManager>
                 Debug.Log("Player Controller unavailable");
         }
 
-        if (_currentScene != "feature_Shop")
+        if (_currentScene != SHOP_SCENE_NAME)
             playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
             //playerState
     }
@@ -80,7 +81,7 @@ public class GameManager : IPersistentSingleton<GameManager>
         playerState.UpdateHealth();
 
         GameObject playerCamera = GameObject.Find("PlayerCamera");
-        if (_currentScene != "feature_Shop")
+        if (_currentScene != SHOP_SCENE_NAME)
         {
             uiManager.potionsTray = GameObject.Find("Potions");
             uiManager.UpdateInventory();
