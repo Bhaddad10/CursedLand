@@ -93,8 +93,8 @@ public class EnemyController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController player = collision.GetComponent<PlayerController>();
-
-        player.takeDamage(damage);
+        if (player)
+            player.takeDamage(damage);
         //Destroy(collision.gameObject);            
     }
     public void takeDamage(int damage)

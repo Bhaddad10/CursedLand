@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,10 +10,6 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [Space]
-    //Velocidade do personagem
-    public int hp = 150;
-    public float speed = 10.0f;
-    public bool isDead = false;
 
     //Variaveis para definir um intervalo de ataque
     public float cooldown = 1.5f;
@@ -51,27 +48,29 @@ public class PlayerController : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        //playerState.Initialize();
     }
 
     private void Start()
     {
-        if (DialogManager.Instance != null)
+        if (DialogManager.Instance == null)
         {
             if (DEBUG)
                 Debug.Log("No DialogManager found for this scene. Running without dialogs.");
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
+        takePotion();
         talkToNpc();
         _movement = Vector2.zero;
 
         // If scene doesn't contain DialogManager
         //      or, if it does, and it's not on dialog
-        if (DialogManager.Instance == null || (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
+        if (DialogManager.Instance == null || 
+            (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
         {
             move();
             attack();
@@ -82,7 +81,7 @@ public class PlayerController : MonoBehaviour
     // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
     private void FixedUpdate()
     {
-        Vector2 _velocity = _movement.normalized * speed;
+        Vector2 _velocity = _movement.normalized * GameManager.Instance.playerState.speed;
         _rigidbody.velocity = _velocity;
         
     }
@@ -92,7 +91,8 @@ public class PlayerController : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
                             //Meio de bloquear a movimentação do jogador caso ele tente andar na diagonal
-        if (!isDead && !bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
+        if (!GameManager.Instance.playerState.isDead 
+            && !bIsAttacking && !(inputX == 1 && inputY == 1 || inputX == 1 && inputY == -1 || inputX == -1 && inputY == 1 || inputX == -1 && inputY == -1))
         {
             _movement = new Vector2(inputX, inputY);
         }
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
     void attack()
     {
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill && !isDead)
+        if (Input.GetKeyDown(KeyCode.Z) && Time.time > nextSkill && !GameManager.Instance.playerState.isDead)
         {
             bIsAttacking = true;
             nextSkill = Time.time + cooldown;
@@ -154,17 +154,12 @@ public class PlayerController : MonoBehaviour
     }    
     public void takeDamage(int damage)
     {
-        hp -= damage;
         Debug.Log("JOGADOR TOMANDO DANO");
-        if (hp <= 0)
-        {
-            die();
-        }
+        GameManager.Instance.playerState.TakeHit(damage);
     }
     public void die()
     {
         _animator.SetBool("isDead", true);
-        isDead = true;
     }
     void talkToNpc()
     {
@@ -183,5 +178,66 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    void takePotion()
+    {
+        int pressedKey = ConsumePotionKeyPressed();
+        if (pressedKey != -1)
+        {
+            //Debug.Log("Pressed " + (pressedKey + 1));
+            if (GameManager.Instance.playerState.items.Count == 0)
+            {
+                Debug.Log("No more potions");
+                return;
+            }
+            KeyValuePair<string, Potion> keyValuePair = GameManager.Instance.playerState.items.ElementAt(pressedKey);
+            string key = keyValuePair.Key;
+            Potion value = keyValuePair.Value;
+
+            if (value.quantity <= 1)
+            {
+                value.Consume();
+                GameManager.Instance.playerState.items.Remove(key);
+                //GameManager.Instance.playerState.printCurrentInventory();
+                GameManager.Instance.uiManager.UpdateInventory();
+                return;
+            }
+
+            value.Consume();
+            value.quantity -= 1;
+            //GameManager.Instance.playerState.printCurrentInventory();
+            GameManager.Instance.uiManager.UpdateInventory();
+        }
+    }
+
+    int ConsumePotionKeyPressed()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            return 0;
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+            return 1;
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+            return 2;
+
+        return -1;
+
+    }
+
+
+    internal void stashLastPosition()
+    {
+        GameManager.Instance.playerState.stashLastPosition(transform.position);
+    }
+
+    internal void goToLastPosition()
+    {
+        if (GameManager.Instance.playerState.hasLastPosition)
+            transform.position = GameManager.Instance.playerState.lastPosition;
+    }
+
+    internal void saveLastPosition()
+    {
+        GameManager.Instance.playerState.saveLastPosition();
     }
 }
