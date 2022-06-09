@@ -21,5 +21,5 @@ public abstract class Potion
         this.sprite = sprite;
     }
 
-    internal abstract void Consume();
+    internal abstract bool Consume();
 }

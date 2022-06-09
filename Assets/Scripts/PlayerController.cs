@@ -203,14 +203,16 @@ public class PlayerController : MonoBehaviour
 
             if (value.quantity <= 1)
             {
-                value.Consume();
+                if (!value.Consume())
+                    return;
                 GameManager.Instance.playerState.items.Remove(key);
                 //GameManager.Instance.playerState.printCurrentInventory();
                 GameManager.Instance.uiManager.UpdateInventory();
                 return;
             }
 
-            value.Consume();
+            if (!value.Consume())
+                return;
             value.quantity -= 1;
             //GameManager.Instance.playerState.printCurrentInventory();
             GameManager.Instance.uiManager.UpdateInventory();

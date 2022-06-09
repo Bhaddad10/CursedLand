@@ -16,6 +16,9 @@ public class PlayerState
     internal Vector3 lastStashPosition = Vector3.zero;
     internal bool hasLastPosition = false;
 
+    internal bool isUsingSpeedPotion = false;
+    internal float lastSpeed;
+
     internal bool tryBuyItem(ShopItem item)
     {
         if (credits < item.price)
