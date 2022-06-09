@@ -20,7 +20,7 @@ public class GameManager : IPersistentSingleton<GameManager>
     [HideInInspector]
     public PlayerController playerController;
     [HideInInspector]
-    public UIManager potionUiManager;
+    public PotionUIManager potionUiManager;
 
 
     // Start is called before the first frame update
