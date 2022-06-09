@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpeedPotion : Potion
 {
     
-    public SpeedPotion(int quantity, string sprite) : base(quantity, sprite) { }
+    public SpeedPotion(int quantity, Sprite sprite) : base(quantity, sprite) { }
 
     internal override bool Consume()
     {

@@ -36,7 +36,7 @@ public class UIManager
             text.text = "x" + value.quantity;
 
             Image image = child.GetComponentInChildren<Image>();
-            image.sprite = Resources.Load<Sprite>(value.sprite);
+            image.sprite = value.sprite;
 
         }
     }

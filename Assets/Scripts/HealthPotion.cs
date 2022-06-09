@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPotion : Potion
 {
-    public HealthPotion(int quantity, string sprite) : base(quantity, sprite) { }
+    public HealthPotion(int quantity, Sprite sprite) : base(quantity, sprite) { }
 
     internal override bool Consume()
     {
