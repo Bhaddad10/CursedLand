@@ -191,6 +191,12 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("No more potions");
                 return;
             }
+            if (pressedKey >= GameManager.Instance.playerState.items.Count)
+            {
+                Debug.Log("You don't have that Potion");
+                return;
+            }
+
             KeyValuePair<string, Potion> keyValuePair = GameManager.Instance.playerState.items.ElementAt(pressedKey);
             string key = keyValuePair.Key;
             Potion value = keyValuePair.Value;

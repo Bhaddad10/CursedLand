@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class PlayerState
 {
-
+    private const string SPEED_POTION_NAME = "SpeedPotion";
     public int credits = 50;
     public Dictionary<string, Potion> items = new Dictionary<string, Potion>();
 
@@ -31,7 +31,9 @@ public class PlayerState
         }
         else
         {
-            items.Add(item.name, new Potion(1, item.sprite));
+            Potion potion = (item.name == SPEED_POTION_NAME) ? (Potion) new SpeedPotion(1, item.sprite) : new HealthPotion(1, item.sprite);
+
+            items.Add(item.name, potion);
         }
 
         return true;
