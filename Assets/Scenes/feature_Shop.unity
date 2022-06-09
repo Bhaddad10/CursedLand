@@ -654,7 +654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -180.2, y: 174.7}
+  m_AnchoredPosition: {x: -100, y: 174.7}
   m_SizeDelta: {x: 81.25, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &693957750
@@ -1052,7 +1052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 178, y: 174.7}
+  m_AnchoredPosition: {x: 100, y: 174.7}
   m_SizeDelta: {x: 81.25, y: 112.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &835258330
@@ -1742,9 +1742,9 @@ MonoBehaviour:
     price: 10
     gameObject: {fileID: 693957748}
     button: {fileID: 693957753}
-    sprite: small Potions
+    sprite: {fileID: 21300000, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
   - name: SpeedPotion
-    price: 10
+    price: 8
     gameObject: {fileID: 835258328}
     button: {fileID: 835258330}
-    sprite: small Potions
+    sprite: {fileID: 21300008, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}

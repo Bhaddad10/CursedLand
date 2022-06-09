@@ -13,9 +13,9 @@ public abstract class Potion
 {
     public int quantity;
     public int healthToRestore = 50;
-    public string sprite;
+    public Sprite sprite;
 
-    public Potion(int quantity, string sprite)
+    public Potion(int quantity, Sprite sprite)
     {
         this.quantity = quantity;
         this.sprite = sprite;
