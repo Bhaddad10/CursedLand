@@ -8,7 +8,7 @@ public class HealthPotion : Potion
 
     internal override bool Consume()
     {
-        Debug.Log("Consuming Health Potion..");
+        //Debug.Log("Consuming Health Potion..");
         GameManager.Instance.playerState.restoreHp(healthToRestore);
         return true;
     }

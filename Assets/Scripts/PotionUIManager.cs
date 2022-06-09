@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public class UIManager
+public class PotionUIManager
 {
     public GameObject potionsTray;
 
@@ -40,4 +40,11 @@ public class UIManager
 
         }
     }
+
+    internal void updatePotionTray()
+    {
+        potionsTray = GameObject.Find("Potions");
+        UpdateInventory();
+    }
+
 }

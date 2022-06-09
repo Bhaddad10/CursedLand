@@ -6,6 +6,6 @@ public class MerchantNpcController : NpcController
 {
     public void actionAfterDialog()
     {
-        GameManager.Instance.LoadScene("feature_Shop");
+        GameManager.Instance.LoadScene(GameManager.SHOP_SCENE_NAME);
     }
 }

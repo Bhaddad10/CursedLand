@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 50b5d92298f0437458d9572ca605a6a4
   - enabled: 1
-    path: Assets/Scenes/feature_Shop.unity
+    path: Assets/Scenes/Shop.unity
     guid: 7f7cb676e3fe6554d8c53f799dba8b9b
   - enabled: 1
     path: Assets/Scenes/feature_TriggerShop.unity
