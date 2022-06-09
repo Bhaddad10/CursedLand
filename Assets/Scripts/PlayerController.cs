@@ -191,20 +191,28 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("No more potions");
                 return;
             }
+            if (pressedKey >= GameManager.Instance.playerState.items.Count)
+            {
+                Debug.Log("You don't have that Potion");
+                return;
+            }
+
             KeyValuePair<string, Potion> keyValuePair = GameManager.Instance.playerState.items.ElementAt(pressedKey);
             string key = keyValuePair.Key;
             Potion value = keyValuePair.Value;
 
             if (value.quantity <= 1)
             {
-                value.Consume();
+                if (!value.Consume())
+                    return;
                 GameManager.Instance.playerState.items.Remove(key);
                 //GameManager.Instance.playerState.printCurrentInventory();
                 GameManager.Instance.uiManager.UpdateInventory();
                 return;
             }
 
-            value.Consume();
+            if (!value.Consume())
+                return;
             value.quantity -= 1;
             //GameManager.Instance.playerState.printCurrentInventory();
             GameManager.Instance.uiManager.UpdateInventory();
