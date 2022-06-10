@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     private Animator _animator;
     private Transform target;
     private SpriteRenderer sprite;
+    public GameObject credit;
     PlayerController player;
 
     public int health = 100;
@@ -110,16 +111,18 @@ public class EnemyController : MonoBehaviour
     {
         isDead = true;
         _animator.SetBool("isDead", true);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 1.5f);
+        dropCredit();
+
     }
     IEnumerator blinkSprite()
     {
-        for (float i = 0f; i < 1f; i += 0.3f)
+        for (float i = 0f; i < 1f; i += 0.5f)
         {
             sprite.enabled = false;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
             sprite.enabled = true;
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
         }        
     }
     public void distanceFromPlayer()
@@ -127,6 +130,13 @@ public class EnemyController : MonoBehaviour
         float dist = Vector3.Distance(target.position, transform.position);
         Debug.Log(dist);
     }
+
+    public void dropCredit()
+    {
+        
+        Instantiate(credit, transform.position, credit.transform.rotation);
+    }
+
     //Logica de receber dano e morrer inspirado e adaptado deste video : https://www.youtube.com/watch?v=wkKsl1Mfp5M&t
     //Logica de seguir o jogador adaptado deste video https://www.youtube.com/watch?v=dy8hkDmygRI&t
 }

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float cooldown = 1.5f;
     public float nextSkill;
 
+
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
@@ -212,6 +213,14 @@ public class PlayerController : MonoBehaviour
                 return;
             potion.quantity -= 1;
             GameManager.Instance.potionUiManager.UpdateInventory();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Pickable"))
+        {
+            Destroy(other.gameObject);
         }
     }
 
