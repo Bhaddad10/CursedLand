@@ -54,9 +54,6 @@ public class GameManager : IPersistentSingleton<GameManager>
             playerState.healthBar = GameObject.Find("HealthBar-Image").GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update() {}
-
     public void LoadScene(string sceneName)
     {
         playerController.stashLastPosition();
@@ -74,7 +71,6 @@ public class GameManager : IPersistentSingleton<GameManager>
     private void OnSceneLoaded(AsyncOperation asyncOperation)
     {
         OnLoadedSceneComplete?.Invoke(_currentScene);
-
 
         loadPlayerController();
         playerState.UpdateHealth();
