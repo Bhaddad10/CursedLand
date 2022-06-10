@@ -5,5 +5,4 @@ using UnityEngine;
 public class NpcController : MonoBehaviour
 {
     public Dialog dialog;
-
 }
