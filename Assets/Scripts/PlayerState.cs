@@ -42,6 +42,11 @@ public class PlayerState
         return true;
     }
 
+    public void addCredits()
+    {
+        credits += 10;
+    }
+
     // Print inventory
     public void printCurrentInventory()
     {

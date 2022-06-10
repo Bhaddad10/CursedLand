@@ -184,15 +184,15 @@ public class PlayerController : MonoBehaviour
         int pressedKey = ConsumePotionKeyPressed();
         if (pressedKey != -1)
         {
-            //Debug.Log("Pressed " + (pressedKey + 1));
+            
             if (GameManager.Instance.playerState.items.Count == 0)
             {
-                //Debug.Log("No more potions");
+                
                 return;
             }
             if (pressedKey >= GameManager.Instance.playerState.items.Count)
             {
-                //Debug.Log("You don't have that Potion");
+                
                 return;
             }
 
@@ -221,6 +221,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Pickable"))
         {
             Destroy(other.gameObject);
+            GameManager.Instance.playerState.addCredits();
         }
     }
 
@@ -236,7 +237,6 @@ public class PlayerController : MonoBehaviour
         return -1;
 
     }
-
 
     internal void stashLastPosition()
     {
