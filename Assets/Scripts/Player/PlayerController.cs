@@ -8,27 +8,23 @@ public class PlayerController : MonoBehaviour
 {
     private bool DEBUG = true   ;
 
-    [Space]
-    [Space]
-
-    //Variaveis para definir um intervalo de ataque
-    public float cooldown = 1.5f;
-    public float nextSkill;
-
-
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
     private Vector2 _movement = Vector2.zero;
 
-    //Variaveis para guardar a ultima posição do personagem
+    // Intervalo de ataque
+    public float cooldown = 1.5f;
+    private float nextSkill;
+
+    // Última posição do player
     private float lastX = 0;
     private float lastY = 0;
     
-    //Variavel para guardar a informação de ataque do personagem
+    // Estado de ataque do personagem
     private bool bIsAttacking = false;
 
-    //Variaveis para leitura mais rápida
+    // Hashes para animação
     private static readonly int InputXHash = Animator.StringToHash("inputX");
     private static readonly int InputYHash = Animator.StringToHash("inputY");
     private static readonly int InputAttackHash = Animator.StringToHash("Attacking");
@@ -37,12 +33,12 @@ public class PlayerController : MonoBehaviour
     private static readonly int lastYHash = Animator.StringToHash("lastY");
     private static readonly string IdleTreeAnimation = "Idle Tree";
 
+    // Projétil
     public Transform firePosition;
     public GameObject projectile;
 
+    // Identificação de NPC (dialogo)
     public LayerMask npcLayerMask;
-
-    //private bool bSceneContainsDialogManager = true;
 
     // Awake is called when the script instance is being loaded
     private void Awake()
@@ -53,28 +49,26 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (DialogManager.Instance == null)
-        {
-            if (DEBUG)
-                Debug.Log("No DialogManager found for this scene. Running without dialogs.");
-        }
+        if (DialogManager.Instance == null && DEBUG)
+            Debug.Log("No DialogManager found for this scene. Running without dialogs.");
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        takePotion();
         talkToNpc();
         _movement = Vector2.zero;
 
         // If scene doesn't contain DialogManager
         //      or, if it does, and it's not on dialog
-        if (DialogManager.Instance == null || 
-            (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive()))
+        bool notOnDialog = DialogManager.Instance == null ||
+            (DialogManager.Instance != null && !DialogManager.Instance.IsDialogActive());
+        if (notOnDialog)
         {
             move();
             attack();
+            takePotion();
         }
         animate();
     }
@@ -84,9 +78,9 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 _velocity = _movement.normalized * GameManager.Instance.playerState.speed;
         _rigidbody.velocity = _velocity;
-        
     }
-    //Método para captar o input e validar o movimento do personagem 
+
+    // Processa movimento do player 
     void move()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
@@ -102,7 +96,8 @@ public class PlayerController : MonoBehaviour
             _movement = Vector2.zero;
         }
     }
-    //Método para ativar a as arovres de animação
+
+    // Ativar árvores de animação
     void animate()
     {
         if (_movement.sqrMagnitude > 0.01f)
@@ -123,7 +118,8 @@ public class PlayerController : MonoBehaviour
         _animator.SetFloat(InputXHash, _movement.x);
         _animator.SetFloat(InputYHash, _movement.y);
     }
-    //Método para verificar quando o jogador atacar
+
+    // Verificar quando o ataque
     void attack()
     {
         AnimatorStateInfo animStateInfo = _animator.GetCurrentAnimatorStateInfo(0);
@@ -139,7 +135,8 @@ public class PlayerController : MonoBehaviour
             fireBall();
         }
     }
-    //Método para spawnar uma bola de fogo
+
+    // Método para spawnar uma bola de fogo
     void fireBall()
     {
         Vector2 direction = new Vector2(lastX, lastY).normalized;
@@ -153,15 +150,18 @@ public class PlayerController : MonoBehaviour
         //Lógica de rotação do objeto:
         //https://stackoverflow.com/questions/53899781/top-down-shooter-bullet-not-accurate-at-all
     }    
+
     public void takeDamage(int damage)
     {
-        Debug.Log("JOGADOR TOMANDO DANO");
         GameManager.Instance.playerState.TakeHit(damage);
     }
+
     public void die()
     {
         _animator.SetBool("isDead", true);
     }
+
+    // Diálogo com NPC próximo
     void talkToNpc()
     {
         if (Input.GetKeyDown(KeyCode.X))
@@ -179,6 +179,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Consome poção
     void takePotion()
     {
         int pressedKey = ConsumePotionKeyPressed();
@@ -216,6 +217,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Coleta créditos
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Pickable"))
@@ -225,6 +227,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Retorna índice para tecla digitada ou -1 se fora de range
     int ConsumePotionKeyPressed()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -238,17 +241,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    // Realiza "stash" (salvamento temporário da posição atual no mapa)
     internal void stashLastPosition()
     {
         GameManager.Instance.playerState.stashLastPosition(transform.position);
     }
 
+    // Restaura última posição no mapa
     internal void goToLastPosition()
     {
         if (GameManager.Instance.playerState.hasLastPosition)
             transform.position = GameManager.Instance.playerState.lastPosition;
     }
 
+    // Salvamento permanente da última posição no mapa
     internal void saveLastPosition()
     {
         GameManager.Instance.playerState.saveLastPosition();

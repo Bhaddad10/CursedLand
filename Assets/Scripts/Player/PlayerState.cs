@@ -62,15 +62,19 @@ public class PlayerState
         }
     }
 
+    // Realiza "stash" (salvamento temporário da posição atual no mapa)
+    internal void stashLastPosition(Vector3 position)
+    {
+        lastStashPosition = position;
+    }
+
+    // Salvamento permanente da última posição no mapa
     internal void saveLastPosition()
     {
         hasLastPosition = true;
         lastPosition = lastStashPosition;
     }
-    internal void stashLastPosition(Vector3 position)
-    {
-        lastStashPosition = position;
-    }
+    
 
     public float speed = 10.0f;
     public bool isDead = false;
