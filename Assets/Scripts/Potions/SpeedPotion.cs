@@ -11,7 +11,6 @@ public class SpeedPotion : Potion
     {
         if (GameManager.Instance.playerState.isUsingSpeedPotion)
             return false;
-        //Debug.Log("Consuming Speed Potion..");
         GameManager.Instance.playerState.lastSpeed = GameManager.Instance.playerState.speed;
         GameManager.Instance.playerState.speed *= 1.4f;
         GameManager.Instance.playerState.isUsingSpeedPotion = true;

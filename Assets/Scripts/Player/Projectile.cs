@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 8f;
-    public GameObject inpactEffectPrefab;
+    public float speed = 18f;
     public int damage = 50;
+    public GameObject inpactEffectPrefab;
 
     private Rigidbody2D _rigidbody;
 
@@ -14,9 +14,9 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
-        //_rigidbody.velocity = transform.right * speed;
     }
 
+    // Aplica dano
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject effect = Instantiate(inpactEffectPrefab, transform.position, Quaternion.identity);
@@ -30,6 +30,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    // Destrói se sair do campo de visão
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
