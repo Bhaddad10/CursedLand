@@ -154,6 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a84d2e508b3d64b96f0347da70ee14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  inpactEffectPrefab: {fileID: 2719500525979957516, guid: 2df268b585030464594cbe5279a5b4c4, type: 3}
+  speed: 15
   damage: 50
+  inpactEffectPrefab: {fileID: 2719500525979957516, guid: 2df268b585030464594cbe5279a5b4c4, type: 3}

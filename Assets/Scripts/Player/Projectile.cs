@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed = 8f;
+    public float speed = 18f;
     public int damage = 50;
     public GameObject inpactEffectPrefab;
 
