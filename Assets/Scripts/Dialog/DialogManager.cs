@@ -18,14 +18,13 @@ public class DialogManager : MonoBehaviour
     private Queue<string> sentences;
     private NpcController npc;
 
-    //--
+    // Singleton
     private static DialogManager _uniqueInstance;
-
     public static DialogManager Instance
     {
         get { return _uniqueInstance; }
     }
-    //--
+    
 
     void Awake()
     {
@@ -35,9 +34,7 @@ public class DialogManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         sentences = new Queue<string>();
-        //dialogBox.SetActive(bDialogActive);
     }
 
     public void StartDialog(NpcController npcController)
@@ -82,7 +79,6 @@ public class DialogManager : MonoBehaviour
             ((MerchantNpcController) npc).actionAfterDialog();
             npc = null;
         }
-        //Debug.Log("End of conversation.");
     }
 
     public bool IsDialogActive()
