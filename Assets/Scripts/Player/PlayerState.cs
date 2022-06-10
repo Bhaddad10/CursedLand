@@ -8,24 +8,39 @@ using UnityEngine.UI;
 public class PlayerState
 {
     private const string SPEED_POTION_NAME = "SpeedPotion";
-    public int credits = 50;
-    public Dictionary<string, Potion> items = new Dictionary<string, Potion>();
 
-    // Player's position on the map for leaving at the same position
+    [HideInInspector]
+    public float currentHealth;
+    public float maxHealth = 150;
+    public float speed = 10.0f;
+    public int credits = 50;
+    [HideInInspector]
+    public bool isDead = false;
+
+    // Última posição do player no mapa
     internal Vector3 lastPosition = Vector3.zero;
     internal Vector3 lastStashPosition = Vector3.zero;
     internal bool hasLastPosition = false;
 
+    // Controle para evitar sobreposição de poção de velocidade
     internal bool isUsingSpeedPotion = false;
     internal float lastSpeed;
+    
+    // Inventory
+    public Dictionary<string, Potion> items = new Dictionary<string, Potion>();
 
+    [HideInInspector]
+    public Image healthBar;
+    
+
+
+    // Executa compra de item se houver créditos
+    // Returns:
+    //     true - Sucesso
+    //     false - Créditos insuficientes
     internal bool tryBuyItem(ShopItem item)
     {
-        if (credits < item.price)
-        {
-            Debug.Log("Out of credits..");
-            return false;
-        }
+        if (credits < item.price) return false;
 
         credits -= item.price;
         if (items.ContainsKey(item.name))
@@ -35,7 +50,6 @@ public class PlayerState
         else
         {
             Potion potion = (item.name == SPEED_POTION_NAME) ? (Potion) new SpeedPotion(1, item.sprite) : new HealthPotion(1, item.sprite);
-
             items.Add(item.name, potion);
         }
 
@@ -45,21 +59,6 @@ public class PlayerState
     public void addCredits()
     {
         credits += 10;
-    }
-
-    // Print inventory
-    public void printCurrentInventory()
-    {
-        if (items.Count == 0)
-        {
-            Debug.Log("Inventário vazio.");
-            return;
-        }
-
-        foreach (var x in items)
-        {
-            Debug.Log(x.Key + " - " + x.Value.quantity);
-        }
     }
 
     // Realiza "stash" (salvamento temporário da posição atual no mapa)
@@ -74,46 +73,19 @@ public class PlayerState
         hasLastPosition = true;
         lastPosition = lastStashPosition;
     }
-    
-
-    public float speed = 10.0f;
-    public bool isDead = false;
-    //public Text liveText;
-    //public Scrollbar healthSlider;
-    [HideInInspector]
-    public Image healthBar;
-    [Space]
-    //public int lives;
-    //private int maxLives = 3;
-    public float maxHealth = 150;
-    public float currentHealth = 150;
 
     public void Initialize()
     {
-        //lives = maxLives;
         currentHealth = maxHealth;
     }
 
-    /*
-public void OnDie()
-{
-   if (lives > 0)
-   {
-       --lives;
-       UpdateLives();
-       currentHealth = maxHealth;
-       UpdateHelth();
-   }
-   {
-       Debug.Log("Game Over");
-   }
-}*/
     public void OnDie()
     {
         isDead = true;
         GameManager.Instance.playerController.die();
     }
 
+    // Recebe dano
     public void TakeHit(int damage)
     {
         if (currentHealth > 0)
@@ -127,18 +99,13 @@ public void OnDie()
         }
     }
 
-    /*
-    private void UpdateLives()
-    {
-        liveText.text = lives.ToString() + "X";
-    }*/
-
+    // Atualiza UI
     public void UpdateHealth()
     {
         healthBar.fillAmount = currentHealth / maxHealth;
-        //healthSlider.size = currentHealth / maxHealth;
     }
 
+    // Restaura HP
     internal void restoreHp(int healthToRestore)
     {
         currentHealth = Math.Min(currentHealth + healthToRestore, maxHealth);
