@@ -134,12 +134,12 @@ public class EnemyController : MonoBehaviour
     // Metodo que aplica efeito visual ao tomar dano
     IEnumerator blinkSprite()
     {
-        for (float i = 0f; i < 1f; i += 0.5f)
+        for (float i = 0f; i < 1f; i += 0.3f)
         {
             sprite.enabled = false;
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.15f);
             sprite.enabled = true;
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.15f);
         }        
     }
 
